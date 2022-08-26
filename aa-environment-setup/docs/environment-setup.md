@@ -1,6 +1,6 @@
 # Development Environment Set Up
 
-## Required Software ![Software et.al.](./images/code.png)
+## Required Software
 
 **Required** tools for this course include:
 
