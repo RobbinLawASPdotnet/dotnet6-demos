@@ -32,6 +32,8 @@ git config -l
 
 The -l means list all configs. Press the space bar to see each setting, and `q` to quit.
 
+If you still get errors when trying to pull from or push to github, you will have to get into the Windows Credential Manager and delete the github references. A machine restart will be required.
+
 ----
 
 ## Setting GitHub Authentication for more than one GitHub User
