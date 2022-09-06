@@ -4,7 +4,7 @@
 
 - Create the following folders in the C drive:
   - C:\ASPdotnetDev
-  - C:\ASPdotnetDev/repos
+  - C:\ASPdotnetDev\repos
 ---
 
 ## Create a GitHub Account
