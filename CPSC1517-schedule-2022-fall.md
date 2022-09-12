@@ -4,16 +4,12 @@
 
 |Assessment Name|Description|Weight in Percent|Done/Due in Week|
 |:-:|:-:|:-:|:-:|
-|Exercise-1 OOP and Composition|OOP|2|5|
-|Exercise-2 OOP Parsing and String Manipulation|File IO with TryParse|2|6|
-|Exercise-3 Console Database Access|File IO with TryParse|2|7|
-|Exercise-4 Web Application Project Setup and Form Input|FrontEnd with Contact Page|2|9|
-|Exercise-5 Database and Client-Server Setup|BackEnd with About Page|2|10|
-|Exercise-6 File Upload and Tabular Output|Query|2|11|
-|Exercise-7 Database Querying, Filtering, and Sorting|Query|2|12|
-|Exercise-8 Database Query for Detail Information|Query|2|13|
-|Exercise-9 Database Inserting|Crud|2|14|
-|Exercise-10 Database Update/Delete|Crud|2|15|
+|Exercise-1|OOP and Composition|3.33|5|
+|Exercise-2|File IO with TryParse|3.33|6|
+|Exercise-3|FrontEnd with Contact Page|3.33|9|
+|Exercise-4|BackEnd with About Page|3.33|10|
+|Exercise-5|Query|3.33|11|
+|Exercise-6|Crud|3.33|14|
 |InClass-1 OOP Foundations|OOP|10|6|
 |InClass-2 OOP and Database|File IO with TryParse|15|8|
 |InClass-3 Website Forms|Query|10|11|
