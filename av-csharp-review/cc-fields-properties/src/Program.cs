@@ -12,7 +12,7 @@ namespace fields_properties
         //Using public fields is NOT good OOP practice.
         public string Name;
 
-        //Private field can only be set once in this class objects constructor.
+        //Private field can only be set once in this class objects constructor, because of the readonly.
         private readonly int GradeField1;
 
         //Private field cannot be changed by any other class object, only this one.
