@@ -3,8 +3,8 @@
 ## Setup Folder Structure
 
 - Create the following folders in the C drive:
-  - C:\ASPdotnetDev
-  - C:\ASPdotnetDev\repos
+  - C:\DevASPdotnet
+  - C:\DevASPdotnet\repos
 ---
 
 ## Create a GitHub Account

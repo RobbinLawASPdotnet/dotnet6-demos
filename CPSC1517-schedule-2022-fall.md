@@ -22,9 +22,12 @@
 
 ## Calendar
 
+- [Link to my demos](https://github.com)
+- [Link to Github Classroom](https://classroom.gihub.com)
+
 |Week|Mon|Tue|Wed|Thu|Fri|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|0||||Sep01-[Day01](#day01)-Intro|Sep02|
+|0||||Sep01-[Day01](#day01)-Setup|Sep02|
 |1|Sep05|Sep06-[Day02](#day02)-OOP|Sep07|Sep08-[Day03](#day03)-OOP|Sep09|
 |2|Sep12-[Day04](#day04)-OOP|Sep13-[Day05](#day05)-OOP|Sep14|Sep15-[Day06](#day06)-OOP|Sep16|
 |3|Sep19-[Day07](#day07)-OOP|Sep20-[Day08](#day08)-OOP|Sep21|Sep22-[Day09](#day09)-OOP|Sep23|
@@ -46,23 +49,36 @@
 Intro to Course
 - Outline, Calendar & Assessments
 
-Setup of Development Environment.
+Setup of Development Environment
+- Go to my github repo with the link above
+- Doc: environment-setup
+  - Setup Folder Structure
+  - GitHub Account
+  - Download Git to computer
+  - Download GetHub CLI
   - Visual Studio Code (VSCode)
   - VSCode Extensions
   - Visual Studio 2022 Community Edition
-  - Download Git to computer
-  - GitHub Account
 
 [Back to Top](#calendar)
 
 ## Day02
 
-OOP
--	create C:\CPSC1517\repos
--	clone my demos repo
--	clone, commit, push, pull
--	aa-test\hello-world
--	dotnet build, dotnet run
+Setup of Development Environment
+- Clone my Demos from Github with the link above
+- Doc: environment-setup
+  - Review setup steps from previous day
+- Doc: test-drive
+  - Test drive the tool chain 
+- Doc: vscode-features-extensions
+- Doc: git-github-with-VSCode
+
+[Back to Top](#calendar)
+
+## Day03
+
+OOP C# Review
+
 -	review .csproj
 -	review using, namespace, main
 -	aa-test\try-catch-finally
