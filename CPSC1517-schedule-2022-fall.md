@@ -2,7 +2,7 @@
 
 ## Assessments
 
-|Assessment Name|Description|Weight in Percent|Done/Due in Week|
+|Assessment Name|Description|Weight %|Done/Due in Week|
 |:-:|:-:|:-:|:-:|
 |Exercise-1|OOP and Composition|3.33|5|
 |Exercise-2|File IO with TryParse|3.33|6|
@@ -28,10 +28,10 @@
 |Week|Mon|Tue|Wed|Thu|Fri|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |0||||Sep01-[Day01](#day01)-Setup|Sep02|
-|1|Sep05|Sep06-[Day02](#day02)-OOP|Sep07|Sep08-[Day03](#day03)-OOP|Sep09|
+|1|Sep05|Sep06-[Day02](#day02)-Setup|Sep07|Sep08-[Day03](#day03)-OOP|Sep09|
 |2|Sep12-[Day04](#day04)-OOP|Sep13-[Day05](#day05)-OOP|Sep14|Sep15-[Day06](#day06)-OOP|Sep16|
 |3|Sep19-[Day07](#day07)-OOP|Sep20-[Day08](#day08)-OOP|Sep21|Sep22-[Day09](#day09)-OOP|Sep23|
-|4|Sep26-[Day10](#day10)-FileIO|Sep27-[Day11](#day11)-FileIO|Sep28|Sep29-[Day12](#day12)-FileIO|Sep30|
+|4|Sep26-[Day10](#day10)-OOP|Sep27-[Day11](#day11)-OOP|Sep28|Sep29-[Day12](#day12)-OOP|Sep30|
 |5|Oct03-[Day13](#day13)-FileIO|Oct04-[Day14](#day14)-FileIO|Oct05|Oct06-[Day15](#day15)-FileIO|Oct07|
 |6|Oct10|Oct11|Oct12|Oct13Oct13-[Day16](#day16)-FileIO|Oct14|
 |7|Oct17-[Day17](#day17)-FrontEnd|Oct18-[Day18](#day18)-FrontEnd|Oct19|Oct20-[Day19](#day19)-FrontEnd|Oct21|
@@ -78,54 +78,49 @@ Setup of Development Environment
 ## Day03
 
 OOP C# Review
-
--	review .csproj
--	review using, namespace, main
--	aa-test\try-catch-finally
--	review instantiating Program
--	review try catch finally
-
-[Back to Top](#calendar)
-
-## Day03
-
-OOP
-- github classroom repo creation
-- clone private repo
-- Overview of TrainSystem Ex01a
-- Engine and Train Classes
-- Program.cs to test
-- Overview of WestWindSystem Ex01a
-- Supplier Class
-- review fields
-- readonly needs constructor
-- override ToString()
-- ProductLine Class
-- review properties
-- Program.cs to test
-
-Ex01a – Engine/Train Classes with Program to test
+- C-Sharp-Review-Test
 
 [Back to Top](#calendar)
 
 ## Day04
 
-OOP
--	Review of WestWindSystem Ex01a
--	Supplier Class
--	ProductLine Class
--	Program.cs to test
--	Review of TrainSystem Ex01a
--	Engine and Train Classes
--	Program.cs to test
-
-Ex01a – Engine/Train Classes with Program to test
+OOP C# Review
+try-catch-finally
+-	Demo: try-catch-finally
 
 [Back to Top](#calendar)
 
 ## Day05
 
-OOP
+OOP C# Review
+fields and properties
+-	Demo: fields-properties
+  -	Constructor Chaining
+
+[Back to Top](#calendar)
+
+## Day06
+
+Setup of Assessment Repo via Github Classroom
+- Use the link above to join Classroom, create an assessment repo, and clone it
+
+OOP Composition
+- Overview of WestWindSystem Ex01a
+- Supplier Class
+- override ToString()
+- ProductLine Class
+- Program.cs to test
+- Overview of TrainSystem Ex01a
+- Engine and Train Classes
+- Program.cs to test
+
+Ex01a – Engine/Train Classes with Program to test
+
+[Back to Top](#calendar)
+
+## Day07
+
+OOP Composition
 -	Overview of WestWindSystem Ex01b
 -	Product Class
 -	Categories enum
@@ -144,26 +139,7 @@ Ex01b – RollingStock/Train Classes with Program to test
 
 [Back to Top](#calendar)
 
-## Day06
-
-OOP
--	Review of WestWindSystem Ex01b
--	Product Class
--	Categories enum
--	ProductLine Class
--	AddProduct()
--	Program.cs to test
--	Debugging Console Programs
--	Review of TrainSystem Ex01b
--	RollingStock and Train Classes
--	TrainType enum
--	Program.cs to test
-
-Ex01b – RollingStock/Train Classes with Program to test
-
-[Back to Top](#calendar)
-
-## Day07
+## Day08
 
 OOP
 -	Fields vs Fully Implemented Properties vs Auto Implemented Properties Demo
