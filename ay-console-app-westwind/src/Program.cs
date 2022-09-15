@@ -12,12 +12,12 @@ namespace WestWindSystem
         static void Main(string[] args)
         {
             var app = new Program();
-            //app.Ex01a();
+            app.Ex01a();
             //app.Ex01b();
             //app.Ex02a();
-            app.Ex02b();
-            app.Ex02c();
-            app.Ex02d();
+            //app.Ex02b();
+            //app.Ex02c();
+            //app.Ex02d();
         }
         #region Ex01a
         private void Ex01a()
