@@ -22,8 +22,8 @@
 
 ## Calendar
 
-- [Link to my demos](https://github.com)
-- [Link to Github Classroom](https://classroom.gihub.com)
+- [Link to my demos](https://github.com/RobbinLawASPdotnet/dotnet6-demos.git)
+- [Link to Github Classroom](https://classroom.github.com/a/yYyC_XxT)
 
 |Week|Mon|Tue|Wed|Thu|Fri|
 |:-:|:-:|:-:|:-:|:-:|:-:|
