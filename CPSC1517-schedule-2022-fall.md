@@ -2,18 +2,18 @@
 
 ## Assessments
 
-|Assessment Name|Description|Weight %|Done/Due in Week|
+|Assessment Name|Description|Weight %|Due 11:59 PM|
 |:-:|:-:|:-:|:-:|
-|Exercise-1|OOP and Composition|3.33|5|
-|Exercise-2|File IO with TryParse|3.33|6|
-|Exercise-3|FrontEnd with Contact Page|3.33|9|
-|Exercise-4|BackEnd with About Page|3.33|10|
-|Exercise-5|Query|3.33|11|
-|Exercise-6|Crud|3.33|14|
-|InClass-1 OOP Foundations|OOP|10|6|
-|InClass-2 OOP and Database|File IO with TryParse|15|8|
-|InClass-3 Website Forms|Query|10|11|
-|InClass-4 CRUD and Client-Server|Crud|10|14|
+|Exercise-1|OOP and Composition|3|Monday Sep 26|
+|Exercise-2|File IO with TryParse|3||
+|Exercise-3|FrontEnd with Contact Page|3||
+|Exercise-4|BackEnd with About Page|3||
+|Exercise-5|Query|4||
+|Exercise-6|Crud|4||
+|InClass-1|OOP and Composition|10|Thursday Sep 29|
+|InClass-2|File IO with TryParse|15||
+|InClass-3|Query|10||
+|InClass-4|Crud|10||
 |Project-Deliverable-1 Planning||5||
 |Project-Deliverable-2 Setup||5||
 |Project-Deliverable-3 Data Query||10||
@@ -27,22 +27,22 @@
 
 |Week|Mon|Tue|Wed|Thu|Fri|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|0||||Sep01-[Day01](#day01)-Setup|Sep02|
-|1|Sep05|Sep06-[Day02](#day02)-Setup|Sep07|Sep08-[Day03](#day03)-OOP|Sep09|
-|2|Sep12-[Day04](#day04)-OOP|Sep13-[Day05](#day05)-OOP|Sep14|Sep15-[Day06](#day06)-OOP|Sep16|
-|3|Sep19-[Day07](#day07)-OOP|Sep20-[Day08](#day08)-OOP|Sep21|Sep22-[Day09](#day09)-OOP|Sep23|
-|4|Sep26-[Day10](#day10)-OOP|Sep27-[Day11](#day11)-OOP|Sep28|Sep29-[Day12](#day12)-OOP|Sep30|
-|5|Oct03-[Day13](#day13)-FileIO|Oct04-[Day14](#day14)-FileIO|Oct05|Oct06-[Day15](#day15)-FileIO|Oct07|
-|6|Oct10|Oct11|Oct12|Oct13Oct13-[Day16](#day16)-FileIO|Oct14|
-|7|Oct17-[Day17](#day17)-FrontEnd|Oct18-[Day18](#day18)-FrontEnd|Oct19|Oct20-[Day19](#day19)-FrontEnd|Oct21|
-|8|Oct24-[Day20](#day20)-FrontEnd|Oct25-[Day21](#day21)-BackEnd|Oct26|Oct27-[Day22](#day22)-BackEnd|Oct28|
-|9|Oct31-[Day23](#day23)-BackEnd|Nov01-[Day24](#day24)-BackEnd|Nov02|Nov03-[Day25](#day25)-BackEnd|Nov04|
-|10|Nov07-[Day26](#day26)-FrontEnd/BackEnd|Nov08-[Day27](#day27)-FrontEnd/BackEnd|Nov09|Nov10|Nov11|
-|11|Nov14-[Day28](#day28)-Query|Nov15-[Day29](#day29)-Query|Nov16|Nov17-[Day30](#day30)-Crud|Nov18|
-|12|Nov21-[Day31](#day31)-Crud|Nov22-[Day32](#day32)-Query/Crud|Nov23|Nov24-[Day33](#day33)-Query/Crud|Nov25|
-|13|Nov28-[Day34](#day34)-Project|Nov29-[Day35](#day35)-Project|Nov30|Dec01-[Day36](#day36)-Project|Dec02|
-|14|Dec05-[Day37](#day37)-Project|Dec06-[Day38](#day38)-Project|Dec07|Dec08-[Day39](#day39)-Project|Dec09|
-|15|Dec12-[Day40](#day40)-Project|Dec13-[Day41](#day41)-Project|Dec14|Dec15-[Day42](#day42)-Project||
+|1||||Sep01-[Day01](#day01)-Setup|Sep02|
+|2|Sep05|Sep06-[Day02](#day02)-Setup|Sep07|Sep08-[Day03](#day03)-OOP-C#-Review-Old-MC-Test|Sep09|
+|3|Sep12-[Day04](#day04)-OOP-C#-Review-try-catch|Sep13-[Day05](#day05)-OOP-C#-Review-fields-properties|Sep14|Sep15-[Day06](#day06)-OOP-Composition-Ex1a|Sep16|
+|4|Sep19-[Day07](#day07)-OOP-Composition-Ex1a|Sep20-[Day08](#day08)-OOP-Composition-Ex1b|Sep21|Sep22-[Day09](#day09)-OOP-Composition-Ex1b|Sep23|
+|5|Sep26-[Day10](#day10)-FileIO-Ex2a-WriteCSV|Sep27-[Day11](#day11)-OOP-Ex1-Review|Sep28|Sep29-[Day12](#day12)-OOP-InClass1|Sep30|
+|6|Oct03-[Day13](#day13)-FileIO-Ex2b-ReadCSV|Oct04-[Day14](#day14)-FileIO-Ex2c-ReadJSON|Oct05|Oct06-[Day15](#day15)-FileIO-Ex2d-WriteJSON|Oct07|
+|7|Oct10|Oct11|Oct12|Oct13-[Day16](#day16)-FileIO|Oct14|
+|8|Oct17-[Day17](#day17)-FrontEnd|Oct18-[Day18](#day18)-FrontEnd|Oct19|Oct20-[Day19](#day19)-FrontEnd|Oct21|
+|9|Oct24-[Day20](#day20)-FrontEnd|Oct25-[Day21](#day21)-BackEnd|Oct26|Oct27-[Day22](#day22)-BackEnd|Oct28|
+|10|Oct31-[Day23](#day23)-BackEnd|Nov01-[Day24](#day24)-BackEnd|Nov02|Nov03-[Day25](#day25)-BackEnd|Nov04|
+|11|Nov07-[Day26](#day26)-FrontEnd/BackEnd|Nov08-[Day27](#day27)-FrontEnd/BackEnd|Nov09|Nov10|Nov11|
+|12|Nov14-[Day28](#day28)-Query|Nov15-[Day29](#day29)-Query|Nov16|Nov17-[Day30](#day30)-Crud|Nov18|
+|13|Nov21-[Day31](#day31)-Crud|Nov22-[Day32](#day32)-Query/Crud|Nov23|Nov24-[Day33](#day33)-Query/Crud|Nov25|
+|14|Nov28-[Day34](#day34)-Project|Nov29-[Day35](#day35)-Project|Nov30|Dec01-[Day36](#day36)-Project|Dec02|
+|15|Dec05-[Day37](#day37)-Project|Dec06-[Day38](#day38)-Project|Dec07|Dec08-[Day39](#day39)-Project|Dec09|
+|16|Dec12-[Day40](#day40)-Project|Dec13-[Day41](#day41)-Project|Dec14|Dec15-[Day42](#day42)-Project||
 
 ## Day01
 
@@ -95,6 +95,8 @@ try-catch-finally
 OOP C# Review
 fields and properties
 -	Demo: fields-properties
+  - public, private, and readonly fields
+  - fully implemented and auto implemented properties
   -	Constructor Chaining
 
 [Back to Top](#calendar)
@@ -105,12 +107,12 @@ Setup of Assessment Repo via Github Classroom
 - Use the link above to join Classroom, create an assessment repo, and clone it
 
 OOP Composition
-- Overview of WestWindSystem Ex01a
+- Discussion of WestWindSystem Ex01a Demo
 - Supplier Class
 - override ToString()
 - ProductLine Class
 - Program.cs to test
-- Overview of TrainSystem Ex01a
+- Discussion of TrainSystem Ex01a Requirements
 - Engine and Train Classes
 - Program.cs to test
 
@@ -121,16 +123,26 @@ Ex01a – Engine/Train Classes with Program to test
 ## Day07
 
 OOP Composition
--	Overview of WestWindSystem Ex01b
+- Review of WestWindSystem Ex01a Demo
+- Review of TrainSystem Ex01a Requirements
+
+Ex01a – Engine/Train Classes with Program to test
+
+[Back to Top](#calendar)
+
+## Day08
+
+OOP Composition
+-	Discussion of WestWindSystem Ex01b Demo
 -	Product Class
 -	Categories enum
 -	invalid chars
--	review foreach
+-	review foreach()
 -	override ToString()
 -	ProductLine Class
 -	AddProduct()
 -	Program.cs to test
--	Overview of TrainSystem Ex01b
+-	Discussion of TrainSystem Ex01b Requirements
 -	RollingStock and Train Classes
 -	TrainType enum
 -	Program.cs to test
@@ -139,46 +151,45 @@ Ex01b – RollingStock/Train Classes with Program to test
 
 [Back to Top](#calendar)
 
-## Day08
+## Day09
 
-OOP
--	Fields vs Fully Implemented Properties vs Auto Implemented Properties Demo
--	Constructor Chaining
+OOP Composition
 -	Debugging Console Programs
--	Review of WestWindSystem
--	Review of TrainSystem Requirements
+-	Review of WestWindSystem Ex01b
+-	Review of TrainSystem Ex01b Requirements
 
-Ex01 – Work Period to Complete
-
-[Back to Top](#calendar)
-
-## Day08 
-
-OOP
-- Review of my solution to Ex01
-
-[Back to Top](#calendar)
-
-## Day09 
-
-OOP
-- InClass 1 Work Period Due 11:59 PM
+Ex01b – RollingStock/Train Classes with Program to test
 
 [Back to Top](#calendar)
 
 ## Day10
 
-File IO
+File IO Write to CSV file
 -	Review ToString() override
--	Writing to a csv file with File.WriteAllLines()
+-	Writing to a csv file with File.
+  - WriteAllLines()
 
 Ex02a – Writing RollingStock data to a csv file
 
 [Back to Top](#calendar)
 
-## Day11
+## Day11 
 
-File IO
+OOP Composition
+- Review of my solution to Ex01
+
+[Back to Top](#calendar)
+
+## Day12 
+
+OOP Composition
+- InClass 1 Work Period Due 11:59 PM
+
+[Back to Top](#calendar)
+
+## Day13
+
+File IO Read from CSV file
 -	Reading a csv file with File.ReadAllLines
 -	Try Parse and Parse methods
 
@@ -186,7 +197,7 @@ Ex02b – Reading RollingStock data from a csv file
 
 [Back to Top](#calendar)
 
-## Day12
+## Day14
 
 File IO
 -	JSON
@@ -196,7 +207,7 @@ Ex02c – Writing JSON data to a file
 
 [Back to Top](#calendar)
 
-## Day13
+## Day15
 
 File IO
 -	JSON
@@ -206,26 +217,9 @@ Ex02d – Reading JSON data from a file
 
 [Back to Top](#calendar)
 
-## Day14
-
-File IO
--	Review of File I/O
-
-Ex02 – Work Period to Complete
-
-[Back to Top](#calendar)
-
-## Day15
-
-File IO
-- Review of my solution to Ex02
-
-[Back to Top](#calendar)
-
 ## Day16
 
 File IO
-- InClass 2 Work Period Due 11:59 PM
 
 [Back to Top](#calendar)
 
