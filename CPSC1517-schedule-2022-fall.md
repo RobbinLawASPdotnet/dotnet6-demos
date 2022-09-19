@@ -4,7 +4,7 @@
 
 |Assessment Name|Description|Weight %|Due 11:59 PM|
 |:-:|:-:|:-:|:-:|
-|Exercise-1|OOP and Composition|4|Thursday Sep 29|
+|Exercise-1|OOP and Composition|4|Thursday Sep 29-[Day12](#day12)|
 |Exercise-2|FrontEnd with Contact Page|4||
 |Exercise-3|BackEnd with About Page|4||
 |Exercise-4|Query|4||
@@ -29,8 +29,8 @@
 |2|Sep05|Sep06-[Day02](#day02)-Setup|Sep07|Sep08-[Day03](#day03)-OOP-C#-Review-Old-MC-Test|Sep09|
 |3|Sep12-[Day04](#day04)-OOP-C#-Review-try-catch|Sep13-[Day05](#day05)-OOP-C#-Review-fields-properties|Sep14|Sep15-[Day06](#day06)-OOP-Composition-Ex1a|Sep16|
 |4|Sep19-[Day07](#day07)-OOP-Composition-Ex1a|Sep20-[Day08](#day08)-OOP-Composition-Ex1b|Sep21|Sep22-[Day09](#day09)-OOP-Composition-Ex1b|Sep23|
-|5|Sep26-[Day10](#day10)-FileIO-Ex2a-WriteCSV|Sep27-[Day11](#day11)-OOP-Ex1-Solution-Review|Sep28|Sep29-[Day12](#day12)-OOP-InClass1|Sep30|
-|6|Oct03-[Day13](#day13)-FileIO-Ex2b-ReadCSV|Oct04-[Day14](#day14)-FileIO-Ex2c-WriteJSON|Oct05|Oct06-[Day15](#day15)-FileIO-Ex2d-ReadJSON|Oct07|
+|5|Sep26-[Day10](#day10)-OOP-Composition-Ex1b|Sep27-[Day11](#day11)-FrontEnd|Sep28|Sep29-[Day12](#day12)-FrontEnd|Sep30|
+|6|Oct03-[Day13](#day13)-FrontEnd|Oct04-[Day14](#day14)-OOP-Ex1-Solution-Review|Oct05|Oct06-[Day15](#day15)-OOP-InClass1|Oct07|
 |7|Oct10|Oct11|Oct12|Oct13-[Day16](#day16)-FileIO|Oct14|
 |8|Oct17-[Day17](#day17)-FrontEnd|Oct18-[Day18](#day18)-FrontEnd|Oct19|Oct20-[Day19](#day19)-FrontEnd|Oct21|
 |9|Oct24-[Day20](#day20)-FrontEnd|Oct25-[Day21](#day21)-BackEnd|Oct26|Oct27-[Day22](#day22)-BackEnd|Oct28|
@@ -162,66 +162,16 @@ Ex01b – RollingStock/Train Classes with Program to test
 
 ## Day10
 
-File IO Write to CSV file
--	Review ToString() override
--	Writing to a csv file with File.
-  - WriteAllLines()
-
-Ex02a – Writing RollingStock data to a csv file
-
-[Back to Top](#calendar)
-
-## Day11 
-
 OOP Composition
-- Review of my solution to Ex01
+-	Debugging Console Programs
+-	Review of WestWindSystem Ex01b
+-	Review of TrainSystem Ex01b Requirements
+
+Ex01b – RollingStock/Train Classes with Program to test
 
 [Back to Top](#calendar)
 
-## Day12 
-
-OOP Composition
-- InClass 1 Work Period Due 11:59 PM
-
-[Back to Top](#calendar)
-
-## Day13
-
-File IO Read from CSV file
--	Reading a csv file with File.ReadAllLines
--	Try Parse and Parse methods
-
-Ex02b – Reading RollingStock data from a csv file
-
-[Back to Top](#calendar)
-
-## Day14
-
-File IO
--	JSON
--	Serialization
-
-Ex02c – Writing JSON data to a file
-
-[Back to Top](#calendar)
-
-## Day15
-
-File IO
--	JSON
--	Deserialization
-
-Ex02d – Reading JSON data from a file
-
-[Back to Top](#calendar)
-
-## Day16
-
-File IO
-
-[Back to Top](#calendar)
-
-## Day17
+## Day11
 
 Front-End Razor Page WebApp
 -	dotnet new webapp -n -o
@@ -240,8 +190,70 @@ Front-End Razor Page WebApp
 -	Overview of TrainWatch
 -	Index page with logo
 
-Ex03 – Front-End Index Page with logo
+Ex02 – Front-End Index Page with logo
+Ex01b – RollingStock/Train Classes with Program to test
 
+[Back to Top](#calendar)
+
+## Day12
+
+Front-End Razor Page WebApp
+-	dotnet new webapp -n -o
+-	webapp structure out of box
+-	bootstrap
+-	_layout
+-	Pages out of the box 
+-	index.cshtml
+-	code behind .cshtml.cs
+-	Review Inheritance
+-	PageModel
+-	dotnet build
+-	dotnet watch run
+-	Overview of WestWindWatch
+-	Index page with logo
+-	Overview of TrainWatch
+-	Index page with logo
+
+Ex02 – Front-End Index Page with logo
+Ex01b – RollingStock/Train Classes with Program to test
+
+[Back to Top](#calendar)
+
+## Day13
+
+Front-End Razor Page WebApp
+-	dotnet new webapp -n -o
+-	webapp structure out of box
+-	bootstrap
+-	_layout
+-	Pages out of the box 
+-	index.cshtml
+-	code behind .cshtml.cs
+-	Review Inheritance
+-	PageModel
+-	dotnet build
+-	dotnet watch run
+-	Overview of WestWindWatch
+-	Index page with logo
+-	Overview of TrainWatch
+-	Index page with logo
+
+Ex02 – Front-End Index Page with logo
+Ex01b – RollingStock/Train Classes with Program to test
+
+[Back to Top](#calendar)
+
+## Day14
+
+OOP Composition
+- Review of my solution to Ex01
+
+[Back to Top](#calendar)
+
+## Day15 
+
+OOP Composition
+- InClass 1 Work Period Due 11:59 PM
 
 [Back to Top](#calendar)
 
