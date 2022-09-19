@@ -4,13 +4,13 @@
 
 |Assessment Name|Description|Weight %|Due 11:59 PM|
 |:-:|:-:|:-:|:-:|
-|Exercise-1|OOP and Composition|3|Monday Sep 26|
+|Exercise-1|OOP and Composition|3|Monday Sep 29|
 |Exercise-2|File IO with TryParse|3||
 |Exercise-3|FrontEnd with Contact Page|3||
 |Exercise-4|BackEnd with About Page|3||
 |Exercise-5|Query|4||
 |Exercise-6|Crud|4||
-|InClass-1|OOP and Composition|10|Thursday Sep 29|
+|InClass-1|OOP and Composition|10|Thursday Oct 06|
 |InClass-2|File IO with TryParse|15||
 |InClass-3|Query|10||
 |InClass-4|Crud|10||
