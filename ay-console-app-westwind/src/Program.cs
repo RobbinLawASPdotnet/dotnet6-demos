@@ -12,8 +12,8 @@ namespace WestWindSystem
         static void Main(string[] args)
         {
             var app = new Program();
-            app.Ex01a();
-            //app.Ex01b();
+            //app.Ex01a();
+            app.Ex01b();
             //app.Ex02a();
             //app.Ex02b();
             //app.Ex02c();
