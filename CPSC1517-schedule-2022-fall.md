@@ -9,7 +9,7 @@
 |Exercise-3|BackEnd with About Page|4||
 |Exercise-4|Query|4||
 |Exercise-5|Crud|4||
-|InClass-1|OOP and Composition|20|Thursday Oct 06|
+|InClass-1|OOP and Composition|20|Thursday Oct 06-[Day15](#day15)|
 |InClass-2|Query|10||
 |InClass-3|Crud|10||
 |Project-Deliverable-1|Planning|5||
@@ -29,9 +29,9 @@
 |2|Sep05|Sep06-[Day02](#day02)-Setup|Sep07|Sep08-[Day03](#day03)-OOP-C#-Review-Old-MC-Test|Sep09|
 |3|Sep12-[Day04](#day04)-OOP-C#-Review-try-catch|Sep13-[Day05](#day05)-OOP-C#-Review-fields-properties|Sep14|Sep15-[Day06](#day06)-OOP-Composition-Ex1a|Sep16|
 |4|Sep19-[Day07](#day07)-OOP-Composition-Ex1a|Sep20-[Day08](#day08)-OOP-Composition-Ex1b|Sep21|Sep22-[Day09](#day09)-OOP-Composition-Ex1b|Sep23|
-|5|Sep26-[Day10](#day10)-OOP-Composition-Ex1b|Sep27-[Day11](#day11)-FrontEnd|Sep28|Sep29-[Day12](#day12)-FrontEnd|Sep30|
+|5|Sep26-[Day10](#day10)-OOP-Composition-Ex1b|Sep27-[Day11](#day11)-FrontEnd|Sep28|Sep29-[Day12](#day12)-FrontEnd-Ex1 Due|Sep30|
 |6|Oct03-[Day13](#day13)-FrontEnd|Oct04-[Day14](#day14)-OOP-Ex1-Solution-Review|Oct05|Oct06-[Day15](#day15)-OOP-InClass1|Oct07|
-|7|Oct10|Oct11|Oct12|Oct13-[Day16](#day16)-FileIO|Oct14|
+|7|Oct10|Oct11|Oct12|Oct13-[Day16](#day16)-FrontEnd|Oct14|
 |8|Oct17-[Day17](#day17)-FrontEnd|Oct18-[Day18](#day18)-FrontEnd|Oct19|Oct20-[Day19](#day19)-FrontEnd|Oct21|
 |9|Oct24-[Day20](#day20)-FrontEnd|Oct25-[Day21](#day21)-BackEnd|Oct26|Oct27-[Day22](#day22)-BackEnd|Oct28|
 |10|Oct31-[Day23](#day23)-BackEnd|Nov01-[Day24](#day24)-BackEnd|Nov02|Nov03-[Day25](#day25)-BackEnd|Nov04|
