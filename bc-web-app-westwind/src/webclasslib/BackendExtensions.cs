@@ -12,36 +12,35 @@ using BLL;
 
 namespace webclasslib
 {
-    public static class BackendExtensions
-    {
-        public static void AddBackendDependencies(this IServiceCollection services, Action<DbContextOptionsBuilder> options)
-        {
-            services.AddDbContext<Context>(options);
+	public static class BackendExtensions
+	{
+		public static void AddBackendDependencies(this IServiceCollection services, Action<DbContextOptionsBuilder> options)
+		{
+			services.AddDbContext<Context>(options);
 
-            services.AddTransient<DbVersionServices>((serviceProvider) =>
-            {
-                var context = serviceProvider.GetRequiredService<Context>();
-                return new DbVersionServices(context);
-            });
+			services.AddTransient<DbVersionServices>((serviceProvider) =>
+			{
+				var context = serviceProvider.GetRequiredService<Context>();
+				return new DbVersionServices(context);
+			});
 
-            services.AddTransient<CategoryServices>((serviceProvider) =>
+			services.AddTransient<CategoryServices>((serviceProvider) =>
 			{
 				var context = serviceProvider.GetRequiredService<Context>();
 				return new CategoryServices(context);
 			});
 
-            services.AddTransient<SupplierServices>((serviceProvider) =>
+			services.AddTransient<SupplierServices>((serviceProvider) =>
 			{
 				var context = serviceProvider.GetRequiredService<Context>();
 				return new SupplierServices(context);
 			});
 
-            services.AddTransient<ProductServices>((serviceProvider) =>
+			services.AddTransient<ProductServices>((serviceProvider) =>
 			{
 				var context = serviceProvider.GetRequiredService<Context>();
 				return new ProductServices(context);
 			});
-
-        }
-    }
+		}
+	}
 }

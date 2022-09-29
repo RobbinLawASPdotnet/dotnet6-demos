@@ -1,11 +1,12 @@
 {
-  "cSpell.words": [
-    "appsettings",
-    "categoryservices",
-    "Hsts",
-    "HSTS",
-    "productservices",
-    "supplierservices",
-    "WWDB"
-  ]
+	"cSpell.words": [
+		"appsettings",
+		"categoryservices",
+		"Hsts",
+		"HSTS",
+		"ntext",
+		"productservices",
+		"supplierservices",
+		"WWDB"
+	]
 }

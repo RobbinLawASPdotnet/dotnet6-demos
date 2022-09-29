@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+
+// Additional Namespaces
 using Entities;
 
 namespace DAL
 {
-    public partial class Context : DbContext
-    {
-        public Context(DbContextOptions<Context> options)
-            : base(options)
-        {
-        }
+	public class Context : DbContext
+	{
+		public Context(DbContextOptions<Context> options)
+			: base(options)
+		{
+		}
 
-        public virtual DbSet<BuildVersion> BuildVersions { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Supplier> Suppliers { get; set; }
+		public DbSet<BuildVersion> BuildVersions { get; set; }
+		public DbSet<Category> Categories { get; set; }
+		public DbSet<OrderDetail> OrderDetails { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<Supplier> Suppliers { get; set; }
 
-    }
+	}
 }

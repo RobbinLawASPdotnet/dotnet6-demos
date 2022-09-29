@@ -1,14 +1,12 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#region Additional Namespaces
+// Additional Namespaces
 using DAL;
 using ViewModels;
-#endregion
 
 namespace BLL
 {
