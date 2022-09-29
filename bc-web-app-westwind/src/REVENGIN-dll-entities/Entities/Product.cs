@@ -6,8 +6,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+    [Index(nameof(CategoryId), Name = "CategoriesProducts")]
+    [Index(nameof(CategoryId), Name = "CategoryID")]
+    [Index(nameof(ProductName), Name = "ProductName")]
+    [Index(nameof(SupplierId), Name = "SupplierID")]
+    [Index(nameof(SupplierId), Name = "SuppliersProducts")]
     public partial class Product
     {
+        public Product()
+        {
+            ManifestItems = new HashSet<ManifestItem>();
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
         [Key]
         [Column("ProductID")]
         public int ProductId { get; set; }
@@ -33,6 +44,8 @@ namespace Entities
         [ForeignKey(nameof(SupplierId))]
         [InverseProperty("Products")]
         public virtual Supplier Supplier { get; set; }
+        [InverseProperty(nameof(ManifestItem.Product))]
+        public virtual ICollection<ManifestItem> ManifestItems { get; set; }
         [InverseProperty(nameof(OrderDetail.Product))]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }

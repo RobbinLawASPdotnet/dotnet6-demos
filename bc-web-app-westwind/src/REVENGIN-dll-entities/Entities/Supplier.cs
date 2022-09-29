@@ -6,8 +6,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+    [Index(nameof(CompanyName), Name = "CompanyName")]
+    [Index(nameof(AddressId), Name = "UX_Suppliers_AddressID", IsUnique = true)]
     public partial class Supplier
     {
+        public Supplier()
+        {
+            Products = new HashSet<Product>();
+        }
+
         [Key]
         [Column("SupplierID")]
         public int SupplierId { get; set; }
@@ -30,6 +37,9 @@ namespace Entities
         [StringLength(24)]
         public string Fax { get; set; }
 
+        [ForeignKey(nameof(AddressId))]
+        [InverseProperty("Supplier")]
+        public virtual Address Address { get; set; }
         [InverseProperty(nameof(Product.Supplier))]
         public virtual ICollection<Product> Products { get; set; }
     }

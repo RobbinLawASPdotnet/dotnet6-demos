@@ -7,23 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 //Additional namespaces
 using BLL;
-using Entities;
 using ViewModels;
 
 namespace MyApp.Namespace
 {
 	public class QueryCrudModel : PageModel
 	{
-		private readonly OtherServices Services;
 		private readonly ProductServices ProductServices;
 		private readonly CategoryServices CategoryServices;
     private readonly SupplierServices SupplierServices;
-		public QueryCrudModel(OtherServices services,
-													ProductServices productservices,
+		public QueryCrudModel(ProductServices productservices,
 													CategoryServices categoryservices,
                           SupplierServices supplierservices)
 		{
-			Services = services;
 			ProductServices = productservices;
 			CategoryServices = categoryservices;
 			SupplierServices = supplierservices;
@@ -48,10 +44,8 @@ namespace MyApp.Namespace
 		public string Discontinued {get;set;} 
 
 		[BindProperty]
-		//public List<Category> SelectListOfCatagories {get;set;}
 		public List<SelectionList> SelectListOfCatagories {get;set;}
 		[BindProperty]
-		//public List<Supplier> SelectListOfSuppliers {get;set;}
 		public List<SelectionList> SelectListOfSuppliers {get;set;}
 		
 		public IActionResult OnGet()

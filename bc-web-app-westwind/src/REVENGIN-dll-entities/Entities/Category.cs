@@ -6,8 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+    [Index(nameof(CategoryName), Name = "CategoryName")]
     public partial class Category
     {
+        public Category()
+        {
+            Products = new HashSet<Product>();
+        }
+
         [Key]
         [Column("CategoryID")]
         public int CategoryId { get; set; }

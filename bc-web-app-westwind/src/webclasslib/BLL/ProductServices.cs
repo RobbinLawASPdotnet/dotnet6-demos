@@ -179,16 +179,6 @@ namespace BLL
 			if(OrderDetailRecords.Count != 0)
 					throw new Exception("Cannot delete this Product as it is in the OrderDetails table");
 
-			//BLL Validation
-			//cannot delete product if it is in the ManifestItem table
-			List<ManifestItem> ManifestItemRecords = 
-				Context.ManifestItems
-				.Where(x => 
-					x.ProductId == item.ProductId)
-				.ToList();
-			if(ManifestItemRecords.Count != 0)
-					throw new Exception("Cannot delete this Product as it is in the ManifestItems table");
-
 			EntityEntry<Product> removing = Context.Entry(existing);
 			removing.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
 			Context.SaveChanges();
