@@ -1,0 +1,190 @@
+﻿@* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form *@
+@* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input *@
+@page
+@model MyApp.Namespace.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container">
+<h5>Form Elements</h5>
+
+<p>The following page shows examples of form elements</p>
+
+@if(!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+	<p style="color:red; font-weight: bold;">@Model.ErrorMessage</p>
+}
+
+@if(!string.IsNullOrEmpty(Model.SuccessMessage))
+{
+	<p style="color:green; font-weight: bold;">@Model.SuccessMessage</p>
+}
+
+<form method="POST">
+	<div class="row g-3 mb-3">
+		<div class="col-4">
+			<input type="text" class="form-control" placeholder="enter text 1"
+				name="text1" value="@Model.Text1"/>
+		</div>
+		<div class="col-4">
+			<input type="text" class="form-control" placeholder="enter text 2"
+				name="Text2" value="@Model.Text2"/>
+		</div>	
+		<div class="col-4">
+			<input type="text" class="form-control" placeholder="enter text 3"
+				asp-for="Text3"/>
+		</div>
+	</div>
+	<div class="row g-3 mb-3">
+		<div class="col-4">
+			<input type="number" class="form-control" placeholder="enter num 1"
+				name="number1" value="@Model.Number1"/>
+		</div>
+		<div class="col-4">
+			<input type="number" class="form-control" placeholder="enter num 2"
+				name="Number2" value="@Model.Number2"/>
+		</div>
+		<div class="col-4">
+			<input type="number" class="form-control" placeholder="enter num 3" 
+			asp-for="Number3"/>
+		</div>
+	</div>
+	<div class="row g-3 mb-3">
+		<div class="col-4">
+			<input type="email" class="form-control" placeholder="enter your email"
+				name="Email" value="@Model.Email"/>
+		</div>
+		<div class="col-4">
+			@if(Model.MyDate == DateTime.MinValue)
+			{
+				<input type="date" class="form-control" id="date" name="MyDate" value="" />
+			}
+			else
+			{
+				<input type="date" class="form-control" id="date" name="MyDate" value='@Model.MyDate.ToString("yyyy-MM-dd")'/>
+				@* <input type="date" class="form-control" id="date" name="MyDate" value="@Model.MyDate"/> *@
+			}
+		</div>
+		<div class="col-4">
+			<select class="form-select" name="SelectedSubjectId">
+				@for (var index = 0; index < Model.SelectListOfSubjects.Count; index++)
+				{
+					if (Model.SelectedSubjectId == index)
+					{
+						<option value="@index" selected>@Model.SelectListOfSubjects[index]</option>
+					}
+					else
+					{
+						<option value="@index">@Model.SelectListOfSubjects[index]</option>
+					}
+				}
+			</select>
+		</div>
+	</div>
+	<div class="dropdown">
+  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+	<div class="row g-3 mb-3">
+		<div class="col-4">
+			<textarea rows="5" cols="60" placeholder="enter your message"
+				name="MessageBody">@Model.MessageBody</textarea>
+		</div>
+	</div>
+	<div class="row g-3 mb-3">
+		<div class="col-4">
+			<div class="form-check">
+				<label class="form-check-label" for="CheckBox">CheckBox:</label>
+				<input type="checkbox" class="form-check-input" id="CheckBox"
+					name="CheckBox" checked="@Model.CheckBox" />
+			</div>
+		</div>
+		<div class="col-4">
+			<span>Radio Button Group:</span>
+			<div class="form-check">
+				@if(Model.Radio == "email")
+				{
+					<input type="radio" class="form-check-input" id="radio1"
+						name="Radio" value="email" checked>
+				}
+				else
+				{
+					<input type="radio" class="form-check-input" id="radio1"
+						name="Radio" value="email">
+				}   
+				<label for="radio1" class="form-check-label">Email</label>
+			</div>
+			<div class="form-check">
+				@if(Model.Radio == "phone")
+				{
+					<input type="radio" class="form-check-input" id="radio2"
+						name="Radio" value="phone" checked>
+				}
+				else
+				{
+					<input type="radio" class="form-check-input" id="radio2"
+						name="Radio" value="phone">
+				}   
+				<label for="radio2" class="form-check-label">Phone</label>
+			</div>
+			<div class="form-check">
+				@if(Model.Radio == "mail")
+				{
+					<input type="radio" class="form-check-input" id="radio3"
+						name="Radio" value="mail" checked>
+				}
+				else
+				{
+					<input type="radio" class="form-check-input" id="radio3"
+						name="Radio" value="mail">
+				}   
+				<label for="radio3" class="form-check-label">Mail</label>
+			</div>
+		</div>
+		<div class="col-4">
+			<label>Range:</label>
+			<input type="range" class="form-range" 
+				name="Range" checked="@Model.Range"/>
+		</div>
+	</div>
+	<div class="row g-3 mb-3">
+		<div class="col-4">
+			<button type="submit" class="btn btn-dark" 
+				name="ButtonPressed" value="Submit">Submit</button>
+			<button type="submit" class="btn btn-dark" 
+				name="ButtonPressed" value="Clear">Clear</button>
+		</div>
+	</div>
+</form>
+</div>
+
+@* 
+		Here we use the name/value pair attributes of the
+		input html element to send the data in the body
+		of the post request. 
+		Then in the code behind the name must be in the
+		parameter list of the onPost method to capture
+		the data from the post request
+
+		Here we use the name/value pair attributes of the
+		input html element to send the data in the body
+		of the post request. 
+		Then in the code behind the data is bound to
+		the Text2 property automatically because of the
+		[BindProperty] annotation.
+		We do not need a paramenter in the onPost anymore.
+
+		Here we use the Microsoft tag helper asp-for to directly bind the data to the property in the code behind. 
+		In the code behind we must use the [BindProperty] annotation
+		above the property involved.
+		We do not need a paramenter in the onPost anymore. 
+
+
+*@

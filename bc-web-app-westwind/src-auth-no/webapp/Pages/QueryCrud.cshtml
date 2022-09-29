@@ -1,0 +1,234 @@
+﻿@page
+@model MyApp.Namespace.QueryCrudModel
+@{
+    ViewData["Title"] = "QueryCrud";
+}
+
+<form method="post">
+<div class="row text-center">
+<div class="col-6 justify-content-center">
+	<h5>Product Query</h5>
+	<div class="row mb-3 justify-content-center">
+		<div class="col-2">
+			<label for="PartialProductName" class="col-form-label">Product</label>
+		</div>
+		<div class="col-4">
+			<input type="search" class="form-control" 
+				placeholder="Partial Name" 
+				id="PartialProductName" 
+				name="PartialProductName" value="@Model.PartialProductName">
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+				name="ButtonPressed" value="SearchByPartialProductName">
+				Search
+			</button>
+		</div>
+	</div>
+	<div class="row mb-3 justify-content-center">
+		<div class="col-2">
+			<label for="SelectedCategoryId" class="col-form-label">Category</label>
+		</div>
+		<div class="col-4">
+			<select class="form-select" id="SelectedCategoryId"     		      name="SelectedCategoryId">
+				<option value="0">select ...</option>
+				@foreach (var item in Model.SelectListOfCatagories)
+				{
+					<option value="@item.ValueField" 
+						selected=@(Model.SelectedCategoryId == item.ValueField)>
+						@item.DisplayField
+					</option>
+				}
+			</select>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+				name="ButtonPressed" value="SearchByCategory">
+				Search
+			</button>
+		</div>
+		<input type="hidden" name="FilterType" value="@Model.FilterType">
+	</div>
+	@if(Model.SearchedProducts != null)
+	{
+		<div id="table_box_bootstrap">
+		<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>Action</th>
+			<th>Name</th>
+			<th>Category</th>
+			<th>QuantPerUnit</th>
+			<th>UnitPrice</th>
+			<th>Dis</th>       
+		</tr>
+		</thead>
+		<tbody>
+		@if(Model.SearchedProducts.Count == 0)
+		{
+		<tr><td colspan="6"><i>There are no Products available.</i></td></tr>
+		}
+		@foreach(var item in Model.SearchedProducts)
+		{
+		<tr>
+			<td>
+				<button type="submit" class="btn btn-dark" 
+				name="Product.ProductId" value="@item.ProductId">
+				Edit
+				</button>
+			</td>
+			<td>@item.ProductName</td>
+			<td>@item.Category</td>
+			@* <td>
+			<select disabled>
+				<option value="0">select ...</option>
+				@foreach (var element in Model.SelectListOfCatagories)
+				{
+					<option value="@element.ValueField" 
+					selected=@(item.CategoryId == element.ValueField)>
+					@element.DisplayField
+					</option>
+				}
+			</select>  
+			</td> *@
+			<td>@item.QuantityPerUnit</td>
+			<td>@item.UnitPrice</td>
+			<td>
+				<input type="checkbox" disabled checked="@item.Discontinued">
+			</td>
+		</tr>
+		}
+		</tbody>
+		</table>
+		</div>
+	}
+	</div>
+<div class="col-1"></div>
+<div class="col-5">
+	<h5>Product Crud</h5>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="ProductId" class="col-form-label">Id</label>
+			<input type="number" class="form-control" readonly id="ProductId" 
+				name="Product.ProductId" value="@Model.Product.ProductId" />
+		</div>
+		<div class="col">
+			<label for="ProductName" class="col-form-label">Name</label>
+			<input type="text" class="form-control" id="ProductName" 
+				name="Product.ProductName" value="@Model.Product.ProductName" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="SupplierId" class="col-form-label">Supplier</label>
+			<select class="form-select" id="SupplierId" name="Product.SupplierId">
+				<option value="0">select ...</option>
+				@foreach (var item in Model.SelectListOfSuppliers)
+				{
+					<option value="@item.ValueField" 
+					selected=@(Model.Product.SupplierId == item.ValueField)>
+					@item.DisplayField
+					</option>
+				}
+			</select>
+		</div>
+		<div class="col">
+			<label for="CategoryId" class="col-form-label">Category</label>
+			<select class="form-select" id="CategoryId" name="Product.CategoryId">
+				<option value="0">select ...</option>
+				@foreach (var item in Model.SelectListOfCatagories)
+				{
+					<option value="@item.ValueField" 
+					selected=@(Model.Product.CategoryId == item.ValueField)>
+					@item.DisplayField
+					</option>
+				}
+			</select>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="QuantityPerUnit" class="col-form-label">
+				Quantity Per Unit
+			</label>
+			<input type="text" class="form-control" id="QuantityPerUnit" 
+				name="Product.QuantityPerUnit" value="@Model.Product.QuantityPerUnit"/>
+		</div>
+		<div class="col">
+			<label for="MinimumOrderQuantity" class="col-form-label">
+				Min Order Quantity
+			</label>
+			<input type="number" class="form-control" id="MinimumOrderQuantity" 
+				name="Product.MinimumOrderQuantity" value="@Model.Product.MinimumOrderQuantity"/>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="UnitPrice" class="col-form-label">Unit Price</label>
+			<input type="number" class="form-control" id="UnitPrice" 
+				name="Product.UnitPrice" value="@Model.Product.UnitPrice"/>
+		</div>
+		<div class="col">
+			<label for="UnitsOnOrder" class="col-form-label">Units On Order</label>
+			<input type="number" class="form-control" id="UnitsOnOrder" 
+				name="Product.UnitsOnOrder" value="@Model.Product.UnitsOnOrder"/>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="Discontinued" class="form-check-label">Discontinued</label>
+			<input type="checkbox" class="form-check-input" id="Discontinued" 
+				name="Discontinued" 
+				value="@Model.Discontinued"
+				checked="@Model.Product.Discontinued"/>
+		</div>
+	</div>
+	<div class="row mb-3 justify-content-center">
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark"
+				disabled=@(Model.Product.ProductId != 0) 
+				name="ButtonPressed" value="Add">&nbsp;Add&nbsp;&nbsp;&nbsp;</button>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+			disabled=@(Model.Product.ProductId == 0)
+			name="ButtonPressed" value="Update">Update</button>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+			disabled=@(Model.Product.ProductId == 0)
+			name="ButtonPressed" value="Delete">Delete</button>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+				name="ButtonPressed" value="Clear">Clear</button>
+		</div>
+	</div>
+	
+	@if(!string.IsNullOrEmpty(Model.ErrorMessage))
+	{
+		<p class="error-message">@Model.ErrorMessage</p>
+	}
+
+	@if(!string.IsNullOrEmpty(Model.SuccessMessage))
+	{
+		<p class="success-message">@Model.SuccessMessage</p>
+	}
+</div>
+</div>
+</form>
+
+<script type="text/javascript" src="~/js/paginator.js"></script>
+
+<script type="text/javascript">
+window.addEventListener("load", function () {
+    let box = paginator({
+        table: document.getElementById("table_box_bootstrap").getElementsByTagName("table")[0],
+        box_mode: "list",
+    });
+    box.className = "box";
+    let mytarget = document.getElementById("table_box_bootstrap");
+    mytarget.appendChild(box);
+    mytarget.style.display = 'block';
+}, false);
+</script>
