@@ -133,17 +133,6 @@ namespace BLL
 				Product existing = Context.Products.Find(item.ProductId);
 					if (existing == null)
 						throw new Exception("Product does not exist");
-
-				//BLL Validation
-				//for no product duplicates
-				var exists = 
-					Context.Products.FirstOrDefault(x => 
-					x.ProductName == item.ProductName && 
-					x.SupplierId == item.SupplierId &&
-					x.CategoryId == item.CategoryId &&  
-					x.QuantityPerUnit == item.QuantityPerUnit);
-				if (exists != null)
-					throw new Exception("A product with the same name, supplier, category, and quantity per unit already exists");
 					
 				existing.ProductId = item.ProductId;
 				existing.ProductName = item.ProductName;
