@@ -75,20 +75,11 @@
 				</select>
 			</div>
 		</div>
-		@* <div class="dropdown">
-			<button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-			aria-expanded="false">
-			Dropdown button
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-			<li><a class="dropdown-item" href="#">Action</a></li>
-			<li><a class="dropdown-item" href="#">Another action</a></li>
-			<li><a class="dropdown-item" href="#">Something else here</a></li>
-			</ul>
-			</div> *@
 		<div class="row g-3 mb-3">
 			<div class="col-4">
-				<textarea rows="5" cols="60" placeholder="enter your message" name="MessageBody">@Model.MessageBody</textarea>
+				<textarea class="form-control" 
+				rows="5" cols="60" placeholder="enter your message" name="MessageBody">@Model.MessageBody
+				</textarea>
 			</div>
 		</div>
 		<div class="row g-3 mb-3">
@@ -134,11 +125,6 @@
 					<label for="radio3" class="form-check-label">Mail</label>
 				</div>
 			</div>
-			@* <div class="col-4">
-				<label>Range:</label>
-				<input type="range" class="form-range"
-				name="Range" checked="@Model.Range"/>
-				</div> *@
 		</div>
 		<div class="row g-3 mb-3">
 			<div class="col-4">
