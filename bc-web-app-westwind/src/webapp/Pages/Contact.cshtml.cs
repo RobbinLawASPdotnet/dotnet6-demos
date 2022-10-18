@@ -17,11 +17,13 @@ namespace MyApp.Namespace
 		public string Text2{get;set;}
 		[BindProperty] 
 		public string Text3{get;set;}
+
 		public int Number1{get;set;}
 		[BindProperty] 
 		public int Number2{get;set;}
 		[BindProperty] 
 		public int Number3{get;set;}
+		
 		[BindProperty]
 		public string Email{get;set;}
 		[BindProperty]
