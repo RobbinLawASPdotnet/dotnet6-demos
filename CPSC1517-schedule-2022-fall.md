@@ -4,12 +4,12 @@
 
 |Assessment Name|Description|Weight %|Due 11:59 PM|
 |:-:|:-:|:-:|:-:|
-|Exercise-1|OOP and Composition|4|Thursday Sep 29-[Day12](#day12)|
-|Exercise-2|FrontEnd with Contact Page|4||
+|Exercise-1|OOP and Composition|4|Thursday Sep 29|
+|Exercise-2|FrontEnd with Contact Page|4|Sunday Oct 23|
 |Exercise-3|BackEnd with About Page|4||
 |Exercise-4|Query|4||
 |Exercise-5|Crud|4||
-|InClass-1|OOP and Composition|20|Thursday Oct 06-[Day15](#day15)|
+|InClass-1|OOP and Composition|20|Thursday Oct 06|
 |InClass-2|Query|10||
 |InClass-3|Crud|10||
 |Project-Deliverable-1|Planning|5||
