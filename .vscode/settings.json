@@ -2,11 +2,14 @@
 	"cSpell.words": [
 		"appsettings",
 		"categoryservices",
+		"endregion",
 		"Hsts",
 		"HSTS",
+		"Linq",
 		"ntext",
 		"productservices",
 		"supplierservices",
+		"TWDB",
 		"WWDB"
 	]
 }
