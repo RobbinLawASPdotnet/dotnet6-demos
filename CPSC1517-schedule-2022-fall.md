@@ -4,17 +4,17 @@
 
 |Assessment Name|Description|Weight %|Due 11:59 PM|
 |:-:|:-:|:-:|:-:|
-|Exercise-1|OOP and Composition|4|Thursday Sep 29|
-|Exercise-2|FrontEnd with Contact Page|4|Sunday Oct 23|
-|Exercise-3|BackEnd with About Page|4||
-|Exercise-4|Query|4||
-|Exercise-5|Crud|4||
-|InClass-1|OOP and Composition|20|Thursday Oct 06|
-|InClass-2|Query|10||
-|InClass-3|Crud|10||
-|Project-Deliverable-1|Planning|5||
-|Project-Deliverable-2|Setup|5||
-|Project-Deliverable-3|Data Query|10||
+|Exercise-1|OOP and Composition|6|Thursday Sep 29|
+|Exercise-2|FrontEnd with Contact Page|6|Sunday Oct 23|
+|Exercise-3|BackEnd with About Page|6||
+|Exercise-4|Query|6||
+|Exercise-5|Crud|6||
+|InClass-1|OOP and Composition|12|Thursday Oct 06|
+|InClass-2|Query|12||
+|InClass-3|Crud|12||
+|Project-Deliverable-1|Planning|2||
+|Project-Deliverable-2|Setup|2||
+|Project-Deliverable-3|Data Query|15||
 |Project-Deliverable-4|Crud Maintenance|15||
 ||Total|100||
 
@@ -33,11 +33,11 @@
 |5|Oct03-[Day13](#day13)-FrontEnd|Oct04-[Day14](#day14)-OOP-Ex1-Solution-Review|Oct05|Oct06-[Day15](#day15)-OOP-InClass1|Oct07|
 |6|Oct10|Oct11|Oct12|Oct13-[Day16](#day16)-FrontEnd|Oct14|
 |7|Oct17-[Day17](#day17)-FrontEnd|Oct18-[Day18](#day18)-FrontEnd|Oct19|Oct20-[Day19](#day19)-FrontEnd|Oct21|
-|8|Oct24-[Day20](#day20)-FrontEnd|Oct25-[Day21](#day21)-BackEnd|Oct26|Oct27-[Day22](#day22)-BackEnd|Oct28|
-|9|Oct31-[Day23](#day23)-BackEnd|Nov01-[Day24](#day24)-BackEnd|Nov02|Nov03-[Day25](#day25)-BackEnd|Nov04|
-|10|Nov07-[Day26](#day26)-FrontEnd/BackEnd|Nov08-[Day27](#day27)-FrontEnd/BackEnd|Nov09|Nov10|Nov11|
-|11|Nov14-[Day28](#day28)-Query|Nov15-[Day29](#day29)-Query|Nov16|Nov17-[Day30](#day30)-Crud|Nov18|
-|12|Nov21-[Day31](#day31)-Crud|Nov22-[Day32](#day32)-Query/Crud|Nov23|Nov24-[Day33](#day33)-Query/Crud|Nov25|
+|8|Oct24-[Day20](#day20)-BackEnd|Oct25-[Day21](#day21)-BackEnd|Oct26|Oct27-[Day22](#day22)-BackEnd|Oct28|
+|9|Oct31-[Day23](#day23)-BackEnd|Nov01-[Day24](#day24)-Query|Nov02|Nov03-[Day25](#day25)-Query|Nov04|
+|10|Nov07-[Day26](#day26)-Query|Nov08-[Day27](#day27)-Query|Nov09|Nov10|Nov11|
+|11|Nov14-[Day28](#day28)-Query|Nov15-[Day29](#day29)-Crud|Nov16|Nov17-[Day30](#day30)-Crud|Nov18|
+|12|Nov21-[Day31](#day31)-Crud|Nov22-[Day32](#day32)-Crud|Nov23|Nov24-[Day33](#day33)-Crud|Nov25|
 |13|Nov28-[Day34](#day34)-Project|Nov29-[Day35](#day35)-Project|Nov30|Dec01-[Day36](#day36)-Project|Dec02|
 |14|Dec05-[Day37](#day37)-Project|Dec06-[Day38](#day38)-Project|Dec07|Dec08-[Day39](#day39)-Project|Dec09|
 |15|Dec12-[Day40](#day40)-Project|Dec13-[Day41](#day41)-Project|Dec14|Dec15-[Day42](#day42)-Project||
