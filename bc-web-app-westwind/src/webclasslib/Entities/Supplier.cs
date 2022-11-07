@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+	[Table("Suppliers")]
 	public partial class Supplier
 	{
 		[Key]

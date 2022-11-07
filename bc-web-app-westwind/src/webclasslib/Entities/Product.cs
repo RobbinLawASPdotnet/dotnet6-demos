@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+	[Table("Products")]
 	public partial class Product
 	{
 		[Key]
@@ -21,10 +22,12 @@ namespace Entities
 		[Required(ErrorMessage = "You must supply a quantity per unit")]
 		[StringLength(20, ErrorMessage = "Quantity Per Unit must be only 20 chars")]
 		public string QuantityPerUnit { get; set; }
+		[Column(TypeName = "smallint")]
 		public short? MinimumOrderQuantity { get; set; }
 		[Column(TypeName = "money")]
 		public decimal UnitPrice { get; set; }
 		public int UnitsOnOrder { get; set; }
+		[Column(TypeName = "bit")]
 		public bool Discontinued { get; set; }
 
 		[ForeignKey(nameof(CategoryId))]

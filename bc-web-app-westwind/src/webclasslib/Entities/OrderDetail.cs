@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+	[Table("OrderDetails")]
 	public partial class OrderDetail
 	{
 		[Key]
@@ -17,7 +18,9 @@ namespace Entities
 		public int ProductId { get; set; }
 		[Column(TypeName = "money")]
 		public decimal UnitPrice { get; set; }
+		[Column(TypeName = "smallint")]
 		public short Quantity { get; set; }
+		[Column(TypeName = "real")]
 		public float Discount { get; set; }
 
 		[ForeignKey(nameof(ProductId))]

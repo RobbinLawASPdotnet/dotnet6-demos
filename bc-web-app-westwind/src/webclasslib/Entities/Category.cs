@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
-	[Table("BuildVersion")]
+	[Table("Categories")]
 	public partial class Category
 	{
 		[Key]
@@ -17,6 +17,7 @@ namespace Entities
 		public string CategoryName { get; set; }
 		[Column(TypeName = "ntext")]
 		public string Description { get; set; }
+		[Column(TypeName = "varbinary")]
 		public byte[] Picture { get; set; }
 		[StringLength(40)]
 		public string PictureMimeType { get; set; }
