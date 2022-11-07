@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities
 {
+	[Table("BuildVersion")]
 	public partial class Category
 	{
 		[Key]
