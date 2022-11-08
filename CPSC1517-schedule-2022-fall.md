@@ -12,10 +12,9 @@
 |InClass-1|OOP and Composition|12|Thursday Oct 06|
 |InClass-2|Query|12||
 |InClass-3|Crud|12||
-|Project-Deliverable-1|Planning|2||
-|Project-Deliverable-2|Setup|2||
-|Project-Deliverable-3|Data Query|15||
-|Project-Deliverable-4|Crud Maintenance|15||
+|Project-Deliverable-1|Setup|4||
+|Project-Deliverable-2|Data Query|15||
+|Project-Deliverable-3|Crud Maintenance|15||
 ||Total|100||
 
 ## Calendar
