@@ -15,7 +15,6 @@ namespace BLL
 	public class ProductServices
 	{
 		#region Constructor Dependency Injection
-
 		private readonly Context Context;
 		public ProductServices(Context context)
 		{
