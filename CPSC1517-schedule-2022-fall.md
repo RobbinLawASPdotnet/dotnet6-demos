@@ -8,7 +8,7 @@
 |Exercise-2|FrontEnd with Contact Page|6|Sunday Oct 23|
 |Exercise-3|BackEnd with About Page|6|Sunday Nov 6|
 |Exercise-4|Query|6|Sunday Nov 20|
-|Exercise-5|Crud|6||
+|Exercise-5|Crud|6|Sunday Dec 4|
 |InClass-1|OOP and Composition|12|Thursday Oct 06|
 |InClass-2|Query|12||
 |InClass-3|Crud|12||
