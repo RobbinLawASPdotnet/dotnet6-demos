@@ -10,7 +10,7 @@
 |Exercise-4|Query|6|Sunday Nov 20|
 |Exercise-5|Crud|6|Sunday Dec 4|
 |InClass-1|OOP and Composition|12|Thursday Oct 06|
-|InClass-2|Query|12||
+|InClass-2|Query|12|Thursday Nov 24|
 |InClass-3|Crud|12||
 |Project-Deliverable-1|Setup|4||
 |Project-Deliverable-2|Data Query|15||
