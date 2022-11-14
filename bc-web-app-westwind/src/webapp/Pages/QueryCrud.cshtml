@@ -79,18 +79,6 @@
 			</td>
 			<td>@item.ProductName</td>
 			<td>@item.Category</td>
-			@* <td>
-			<select disabled>
-				<option value="0">select ...</option>
-				@foreach (var element in Model.SelectListOfCatagories)
-				{
-					<option value="@element.ValueField" 
-					selected=@(item.CategoryId == element.ValueField)>
-					@element.DisplayField
-					</option>
-				}
-			</select>  
-			</td> *@
 			<td>@item.QuantityPerUnit</td>
 			<td>@item.UnitPrice</td>
 			<td>
