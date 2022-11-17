@@ -69,6 +69,9 @@ namespace BLL
 				.OrderBy(x => x.ProductName);
 			return info.ToList();
 		}
+		#endregion
+
+		#region READ - Retrieve, Edit, Add, Delete
 
 		public ProductItem Retrieve(int id)
 		{
@@ -89,9 +92,6 @@ namespace BLL
 				}).FirstOrDefault();
 			return info;
 		}
-		#endregion
-
-		#region Commands: Add, Edit, Delete
 
 		public int Add(ProductItem item)
 		{
