@@ -70,13 +70,13 @@ namespace MyApp.Namespace
 
 				if(ButtonPressed == "SearchByPartialProductName")
 				{
-					SuccessMessage = "Product Search by Partial Product Name";
 					FilterType = "PartialString";
+					SuccessMessage = "Search by Partial Name";
 				}
 				else if(ButtonPressed == "SearchByCategory")
 				{
-					SuccessMessage = "Product Search by Category Dropdown";
 					FilterType = "DropDown";
+					SuccessMessage = "Search by Category Dropdown";
 				}
 				else if(ButtonPressed == "Add")
 				{

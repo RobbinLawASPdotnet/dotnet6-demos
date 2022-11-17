@@ -93,6 +93,30 @@ namespace BLL
 			return info;
 		}
 
+		public void Edit(ProductItem item)
+		{
+				Console.WriteLine($"ProductServices: Edit; productId= {item.ProductId}");
+
+				//BLL Validation
+				Product existing = Context.Products.Find(item.ProductId);
+					if (existing == null)
+						throw new Exception("Product does not exist");
+					
+				existing.ProductId = item.ProductId;
+				existing.ProductName = item.ProductName;
+				existing.SupplierId = item.SupplierId;
+				existing.CategoryId = item.CategoryId;
+				existing.QuantityPerUnit = item.QuantityPerUnit;
+				existing.MinimumOrderQuantity = item.MinimumOrderQuantity;
+				existing.UnitPrice = item.UnitPrice;
+				existing.UnitsOnOrder = item.UnitsOnOrder;
+				existing.Discontinued = item.Discontinued;
+
+				EntityEntry<Product> updating = Context.Entry(existing);
+				updating.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+				Context.SaveChanges();
+		}
+
 		public int Add(ProductItem item)
 		{
 			Console.WriteLine($"ProductServices: Add; productId= {item.ProductId}");
@@ -122,30 +146,6 @@ namespace BLL
 			Context.Products.Add(newProduct);
 			Context.SaveChanges();
 			return newProduct.ProductId;
-		}
-
-		public void Edit(ProductItem item)
-		{
-				Console.WriteLine($"ProductServices: Edit; productId= {item.ProductId}");
-
-				//BLL Validation
-				Product existing = Context.Products.Find(item.ProductId);
-					if (existing == null)
-						throw new Exception("Product does not exist");
-					
-				existing.ProductId = item.ProductId;
-				existing.ProductName = item.ProductName;
-				existing.SupplierId = item.SupplierId;
-				existing.CategoryId = item.CategoryId;
-				existing.QuantityPerUnit = item.QuantityPerUnit;
-				existing.MinimumOrderQuantity = item.MinimumOrderQuantity;
-				existing.UnitPrice = item.UnitPrice;
-				existing.UnitsOnOrder = item.UnitsOnOrder;
-				existing.Discontinued = item.Discontinued;
-
-				EntityEntry<Product> updating = Context.Entry(existing);
-				updating.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-				Context.SaveChanges();
 		}
 
 		public void Delete(ProductItem item)
