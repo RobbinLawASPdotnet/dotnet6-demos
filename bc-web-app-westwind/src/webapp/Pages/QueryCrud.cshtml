@@ -146,19 +146,19 @@
 			<label for="MinimumOrderQuantity" class="col-form-label">
 				Min Order Quantity
 			</label>
-			<input type="number" class="form-control" id="MinimumOrderQuantity" 
+			<input type="number" min="0" class="form-control" id="MinimumOrderQuantity" 
 				name="Product.MinimumOrderQuantity" value="@Model.Product.MinimumOrderQuantity"/>
 		</div>
 	</div>
 	<div class="row mb-3">
 		<div class="col">
 			<label for="UnitPrice" class="col-form-label">Unit Price</label>
-			<input type="number" class="form-control" id="UnitPrice" 
+			<input type="number" min="0" class="form-control" id="UnitPrice" 
 				name="Product.UnitPrice" value="@Model.Product.UnitPrice"/>
 		</div>
 		<div class="col">
 			<label for="UnitsOnOrder" class="col-form-label">Units On Order</label>
-			<input type="number" class="form-control" id="UnitsOnOrder" 
+			<input type="number" min="0" class="form-control" id="UnitsOnOrder" 
 				name="Product.UnitsOnOrder" value="@Model.Product.UnitsOnOrder"/>
 		</div>
 	</div>
