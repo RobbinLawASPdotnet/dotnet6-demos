@@ -6,6 +6,10 @@ This document outlines the marking guide and general requirements for the projec
 
 You are to create a ASP.net core 6 web app (FrontEnd using Razor Pages and BackEnd using Entity Framework) from scratch using the knowledge gained via class demos and exercises. 
 
+In your assessments repo main folder create a new folder called `project` and place all project related files in that folder.
+
+When you are working on this project commit frequently and do not forget to push to github to submit.
+
 You are to generate a fully-functional form on one page with two sections:
 
 * Query – Partial Search String and Dropdown Data Lookup with Tabular Display.
