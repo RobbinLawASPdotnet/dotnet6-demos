@@ -80,20 +80,12 @@ namespace MyApp.Namespace
 				}
 				else if(ButtonPressed == "Add")
 				{
-					if(Discontinued == "on")
-						Product.Discontinued = true;
-					else
-						Product.Discontinued = false;
 					FormValidation();
 					Product.ProductId = ProductServices.Add(Product);
 					SuccessMessage = "Add Successful";
 				}
 				else if(ButtonPressed == "Update")
 				{
-					if(Discontinued == "on")
-						Product.Discontinued = true;
-					else
-						Product.Discontinued = false;
 					FormValidation();
 					ProductServices.Edit(Product);
 					SuccessMessage = "Update Successful";
@@ -165,6 +157,14 @@ namespace MyApp.Namespace
 
 		public void FormValidation()
 		{
+			if(Discontinued == "on")
+				Product.Discontinued = true;
+			else
+				Product.Discontinued = false;
+				
+			if(Product.MinimumOrderQuantity == 0)
+				Product.MinimumOrderQuantity = null;
+
 			if(string.IsNullOrEmpty(Product.ProductName))
 				Errors.Add(new Exception("ProductName"));
 			if(Product.SupplierId == 0)
@@ -174,11 +174,6 @@ namespace MyApp.Namespace
 			if(string.IsNullOrEmpty(Product.QuantityPerUnit))
 				Errors.Add(new Exception("QuantityPerUnit"));
 
-			if(Product.UnitPrice < 0)
-				Errors.Add(new Exception("UnitPrice < 0"));
-			if(Product.UnitsOnOrder < 0)
-				Errors.Add(new Exception("UnitsOnOrder < 0"));
-
 			if (Errors.Count() > 0)
 					throw new AggregateException("Invalid Data: ", Errors);
 
@@ -186,6 +181,10 @@ namespace MyApp.Namespace
 				Errors.Add(new Exception("ProductName > 40"));
 			if(Product.QuantityPerUnit.Length > 20)
 				Errors.Add(new Exception("QuantityPerUnit > 20"));
+			if(Product.UnitPrice < 0)
+				Errors.Add(new Exception("UnitPrice < 0"));
+			if(Product.UnitsOnOrder < 0)
+				Errors.Add(new Exception("UnitsOnOrder < 0"));
 			
 			if (Errors.Count() > 0)
 					throw new AggregateException("Invalid Data: ", Errors);
