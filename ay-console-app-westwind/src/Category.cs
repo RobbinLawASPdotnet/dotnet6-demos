@@ -1,9 +1,9 @@
 namespace WestWindSystem
 {
-    public enum Category
-    {
-        BEVERAGE,
-        DAIRY,
-        MEAT
-    }
+	public enum Category
+	{
+		BEVERAGE,
+		DAIRY,
+		MEAT
+	}
 }
