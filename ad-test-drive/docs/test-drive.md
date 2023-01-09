@@ -8,7 +8,7 @@ From the terminal when your working directory is `src` type the following comman
 ```csharp
 # From the src/ folder
 dotnet new sln -n Test
-dotnet new console -n TestSystem
+dotnet new console -n TestSystem --framework net6.0 --use-program-main
 dotnet sln "Test.sln" add TestSystem\TestSystem.csproj
 ```
 
