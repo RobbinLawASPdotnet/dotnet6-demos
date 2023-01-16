@@ -73,7 +73,7 @@ namespace fields_properties
     public Student(string name, int gradeField1, int gradeField2, int propFullImp, int propAutoImp)
     {
       if (propAutoImp == 56)
-        throw new Exception($"Main PropAutoImp Bad Input: {propAutoImp}");
+        throw new Exception($"PropAutoImp Bad Input: {propAutoImp}");
       Name = name;
       GradeField1 = gradeField1;
       setGradeField2(gradeField2);
@@ -84,7 +84,7 @@ namespace fields_properties
     //Non greedy constructor that calls the greedy constructor via :this()
     //to populate the object fields and properties with good default data.
     //Example of constructor chaining.
-    public Student() : this("john", 20, 30, 40, 50)
+    public Student() : this("john", 20, 30, 40, 55)
     {
 
     }
@@ -106,8 +106,8 @@ namespace fields_properties
         Student newStudent2 = new Student();
         Console.WriteLine(newStudent2.ToString());
         //newStudent1.Name = "robbin";
+        //Console.WriteLine(newStudent1.ToString());
         //newStudent1._GradeField2 = 10;
-
       }
       catch (Exception ex)
       {
