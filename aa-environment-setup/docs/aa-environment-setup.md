@@ -36,6 +36,7 @@
 - [Visual Studio Code Website](https://code.visualstudio.com)
 - Download Visual Studio Code if you do not already have it on your machine.
 - From VS Code install the extension `C# by Microsoft - powered by OmniSharp`.
+- From VS Code install the extension `.NET Core Test Explorer - by Jun Han`.
 
 ----
 

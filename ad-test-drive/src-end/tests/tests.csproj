@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\WestWindSystem.csproj" />
+    <ProjectReference Include="..\classlib\classlib.csproj" />
   </ItemGroup>
 
 </Project>
