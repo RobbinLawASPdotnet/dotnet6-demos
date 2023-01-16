@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 namespace fields_properties
 {
   class Student
-  //All classes inherit from System.Object which has a ToString() method
-  //that we override.
-  //class Student : Object
+  // All classes inherit from System.Object which has a ToString() method
+  // that we override.
+  // class Student : Object
   {
-    //Public field can be changed directly by other class objects.
-    //Using public fields is NOT good OOP practice.
+    // Public field can be changed directly by other class objects
+    // in this file or other files.
+    // Using public fields is NOT good OOP practice.
     public string Name;
 
-    //Private field can only be set once in this class objects constructor, because of the readonly.
+    // Private field can only be set once in this class objects constructor,
+    // because of the readonly.
     private readonly int GradeField1;
 
-    //Private field cannot be changed by any other class object, only this one.
+    // Private field cannot be changed by any other class object, only this one.
     private int _GradeField2;
 
     public int getGradeField2()
@@ -34,17 +36,19 @@ namespace fields_properties
       _GradeField2 = number;
     }
 
-    //Private field backing for PropFullImp property
-    //notice that this field is private
-    //encapsulation pillar of OOP
+    // Private field backing for PropFullImp property.
+    // Notice that this field is private, we are practicing
+    // encapsulation, a pillar of OOP.
     private int _GradeField3;
-    //Public fully implemented property. Use for validation if not in the constructor.
-    //the get is run if the PropFullImp is on the right side of an equation.
-    //ex. someVariable = PropFullImp;
-    //the set is run if the PropFullImp is on the left side of an equation.
-    //ex. PropFullImp = 10;
-    //When the set is run a reserved word variable is created called "value" and
-    //whatever was on the right side "10" is stored in "value".
+    // Public fully implemented property. 
+    // Use for validation if validation not in the constructor.
+    // The get is run if the PropFullImp is on the right side of an equation.
+    // ex. someVariable = PropFullImp;
+    // The set is run if the PropFullImp is on the left side of an equation.
+    // ex. PropFullImp = 10;
+    // When the set is run a reserved word variable is created 
+    // called "value" and whatever was on the right side 
+    // example "10" is stored in "value".
     public int PropFullImp
     {
       get
@@ -61,15 +65,19 @@ namespace fields_properties
       }
     }
 
-    //Public auto implemented property: No backing field required as it is
-    //automatically set up. 
-    //Use when validation is done in the constructor which is its job.
+    // Public auto implemented property.
+    // No backing field required as it is
+    // automatically set up. 
+    // Use when validation is done in the constructor.
     public int PropAutoImp { get; set; }
 
-    //Greedy constructor that insures that all fields and properties have values.
-    //These constructors have the job of ensuring that only valid data gets to
-    //the fields and properties.
-    //In this case we allow some fields and the PropFullImp property to do the validation.
+    // Greedy constructor that insures that all fields 
+    // and properties have values.
+    // These constructors have the job of ensuring that 
+    // only valid data gets to the readonly fields and
+    // auto implemented properties.
+    // In this demo we allow the gradField2 setGradeField2 method 
+    // and the PropFullImp property set to do the validation.
     public Student(string name, int gradeField1, int gradeField2, int propFullImp, int propAutoImp)
     {
       if (propAutoImp == 56)
@@ -81,9 +89,10 @@ namespace fields_properties
       PropAutoImp = propAutoImp;
     }
 
-    //Non greedy constructor that calls the greedy constructor via :this()
-    //to populate the object fields and properties with good default data.
-    //Example of constructor chaining.
+    // Non greedy constructor that calls the greedy constructor
+    // via :this() to populate the object fields and properties
+    // with good default data.
+    // Example of constructor chaining.
     public Student() : this("john", 20, 30, 40, 55)
     {
 
@@ -105,8 +114,12 @@ namespace fields_properties
         Console.WriteLine(newStudent1.ToString());
         Student newStudent2 = new Student();
         Console.WriteLine(newStudent2.ToString());
+        // We can change the public field called Name
+        // in this Program class.
         //newStudent1.Name = "robbin";
         //Console.WriteLine(newStudent1.ToString());
+        // We cannot change the private field called _GradeField2
+        // in this Program class.
         //newStudent1._GradeField2 = 10;
       }
       catch (Exception ex)
