@@ -1,15 +1,14 @@
-namespace tests;
+namespace Tests;
+using Classlib;
 
-//additional namespaces
-using classlib;
-
+[TestClass]
 public class UnitTest1
 {
-    [Fact]
-    public void Test1()
+    [TestMethod]
+    public void TestMethod1()
     {
         Class1 myobject = new Class1();
         var actual = myobject.Add(1, 3);
-        Assert.Equal(4, actual);
+        Assert.AreEqual(4, actual);
     }
 }

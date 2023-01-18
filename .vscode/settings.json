@@ -12,5 +12,9 @@
 		"supplierservices",
 		"TWDB",
 		"WWDB"
+	],
+	"cSpell.ignoreWords": [
+		"Classlib",
+		"myobject"
 	]
 }
