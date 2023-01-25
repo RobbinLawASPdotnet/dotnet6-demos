@@ -28,23 +28,31 @@ dotnet new mstest -n Tests --framework net6.0
 dotnet new xunit -n Tests --framework net6.0
 # Allow the Tests project to use the classlib project by referencing it.
 dotnet add Tests/Tests.csproj reference Classlib/Classlib.csproj
-# Create a console project template.
-dotnet new console -n Console --framework net6.0 
+# Create a console project template but with NO
+# Program class or main(), just top level statements.
+dotnet new console -n ConsoleApp --framework net6.0
+# Create a console project template but with
+# Program class and main(). ONLY DO THIS OR THE PREVIOUS NOT BOTH.
+dotnet new console -n ConsoleApp --framework net6.0 --use-program-main
 # Allow the console project to use the classlib project by referencing it.
-dotnet add Console/Console.csproj reference Classlib/Classlib.csproj
-# Create a sln file to optionally use VS Studio
+dotnet add ConsoleApp/ConsoleApp.csproj reference Classlib/Classlib.csproj
+# Create a sln file and add all project to it.
 dotnet new sln -n App
 dotnet sln "App.sln" add Classlib\Classlib.csproj
 dotnet sln "App.sln" add Tests\Tests.csproj
-dotnet sln "App.sln" add Console\Console.csproj
+dotnet sln "App.sln" add ConsoleApp\ConsoleApp.csproj
+```
+In all .csproj files comment out the following:
+```csharp
+<!-- <Nullable>enable</Nullable> -->
 ```
 
 To ensure that your web application works, build and run your project.
 
 ```csharp
 # From the src/ folder
+dotnet build "App.sln"
 cd Console
-dotnet build
 dotnet run
 ```
 

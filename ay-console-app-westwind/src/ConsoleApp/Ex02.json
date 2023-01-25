@@ -1,0 +1,63 @@
+{
+  "Supplier": {
+    "CompanyName": "Robbins Foods",
+    "PhoneNumber": "780-111-2222"
+  },
+  "Products": [
+    {
+      "ProductName": "Chia",
+      "Category": 0,
+      "QuantityPerUnit": "10 boxes X 20 bags",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    },
+    {
+      "ProductName": "White Cheese",
+      "Category": 1,
+      "QuantityPerUnit": "1 kg pkg",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    },
+    {
+      "ProductName": "Angus Beef",
+      "Category": 2,
+      "QuantityPerUnit": "20 - 1 kg tins",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    },
+    {
+      "ProductName": "Orange Cheese",
+      "Category": 1,
+      "QuantityPerUnit": "1 kg pkg",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    },
+    {
+      "ProductName": "Aniseed Syrup",
+      "Category": 0,
+      "QuantityPerUnit": "12 - 550 ml bottles",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    },
+    {
+      "ProductName": "Milk",
+      "Category": 1,
+      "QuantityPerUnit": "1 L pkg",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    }
+  ],
+  "TotalProducts": 6
+}
