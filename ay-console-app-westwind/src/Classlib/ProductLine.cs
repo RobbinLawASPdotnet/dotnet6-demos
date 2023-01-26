@@ -30,7 +30,7 @@ namespace WestWindSystem
         if (product.ProductName.Equals(existingProduct.ProductName))
           found = true;
       if (found)
-        throw new ArgumentException($"The product {product.ProductName} is already part of this product line. Product not added");
+        throw new ArgumentException($"The product {product.ProductName} is already part of this product line. Product not added.");
       Products.Add(product);
     }
 

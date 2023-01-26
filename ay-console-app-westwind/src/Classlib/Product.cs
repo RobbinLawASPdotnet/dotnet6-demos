@@ -13,6 +13,7 @@ namespace WestWindSystem
 		public int UnitsOnOrder {get; set;}
 		public bool Discontinued {get; set;}
 
+		// Sixteen special chars.
 		private const string SPECIALCHARACTERS = @",:;\/!?@#$%^&*~`";
 
 		public Product(string productName, Category category, string quantityPerUnit,

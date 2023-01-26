@@ -14,17 +14,23 @@ namespace WestWindSystem
 		static void Main(string[] args)
 		{
 			var app = new Program();
-			app.Ex01a();
-			app.Ex01b();
-			app.CsvFileName = "Ex02.dat";
-			app.Ex02a();
+			// Creating Supplier and Product Line but no Products.
+			//app.Ex01a();
+			// Creating Supplier, ProductLine, and Products.
+			//app.Ex01b();
+			// Writing only good Product data to a csv file.
+			//app.CsvFileName = "Ex02.dat";
+			//app.Ex02a();
+			// Read a csv file of Products and put data into object model if valid.
 			// Choose to have good or bad data
-			app.CsvFileName = "Ex02.dat";
+			//app.CsvFileName = "Ex02.dat";
 			//app.CsvFileName = "Ex02BAD.dat";
-			app.Ex02b();
-			app.CsvFileName = "Ex02.dat";
-			app.Ex02c();
-			app.Ex02d();
+			//app.Ex02b();
+			// Write good data from a csv file to a json file
+			//app.CsvFileName = "Ex02.dat";
+			//app.Ex02c();
+			// Read a json file and put data into object model.
+			//app.Ex02d();
 		}
 		#region Ex01a
 		private void Ex01a()
@@ -50,17 +56,17 @@ namespace WestWindSystem
 		{
 			try
 			{
-				Console.WriteLine("Ex01b Program started. Creating Products");
+				Console.WriteLine("Ex01b Program started. Creating Supplier, ProductLine, and Products");
 				Supplier theSupplier = new Supplier("Robbins Foods", "780-111-2222");
 				ProductLine theProductLine = new ProductLine(theSupplier);
 				Product theProduct = new Product("Chia", Category.BEVERAGE,"10 boxes X 20 bags", 0, 0, 0, false);
-				// Try to add a null product.
-				//theProductLine.AddProduct(null);
 				theProductLine.AddProduct(theProduct);
 				theProductLine.AddProduct(new Product("White Cheese",Category.DAIRY, "1 kg pkg", 0, 0, 0, false));
 				theProductLine.AddProduct(new Product("Angus Beef",Category.MEAT, "20 - 1 kg tins", 0, 0, 0, false));
 				theProductLine.AddProduct(new Product("Blue Cheese",Category.DAIRY, "1 kg pkg", 0, 0, 0, false));
 
+				// Try to add a null product.
+				//theProductLine.AddProduct(null);
 				// Try to add a product with a empty name.
 				//theProductLine.AddProduct(new Product("",Category.BEVERAGE, "1 L pkg", 0, 0, 0, false));
 				// Try to add a product with a bad name.
@@ -84,23 +90,22 @@ namespace WestWindSystem
 		{
 			try
 			{
-				Console.WriteLine("Ex02a Program started. Writing good data to a csv file.");
+				Console.WriteLine("Ex02a Program started. Writing only good product data to a csv file.");
 				Console.WriteLine($"Writing data to file: {CsvFileName}");
-				//create products file only no supplier.
-				List<Product> products = new List<Product>();
-				//List<Product> products = new();
-				products.Add(new Product("Chia", Category.BEVERAGE,"10 boxes X 20 bags", 0, 0, 0, false));
-				products.Add(new Product("White Cheese",Category.DAIRY, "1 kg pkg", 0, 0, 0, false));
-				products.Add(new Product("Angus Beef",Category.MEAT, "20 - 1 kg tins", 0, 0, 0, false));
-				products.Add(new Product("Orange Cheese",Category.DAIRY, "1 kg pkg", 0, 0, 0, false));
-				products.Add(new Product("Aniseed Syrup", Category.BEVERAGE,"12 - 550 ml bottles", 0, 0, 0, false));
-				products.Add(new Product("Milk",Category.DAIRY, "1 L pkg", 0, 0, 0, false));
+				Supplier theSupplier = new Supplier("Robbins Foods", "780-111-2222");
+				ProductLine theProductLine = new ProductLine(theSupplier);
+				theProductLine.AddProduct(new Product("Chia", Category.BEVERAGE,"10 boxes X 20 bags", 0, 0, 0, false));
+				theProductLine.AddProduct(new Product("White Cheese",Category.DAIRY, "1 kg pkg", 0, 0, 0, false));
+				theProductLine.AddProduct(new Product("Angus Beef",Category.MEAT, "20 - 1 kg tins", 0, 0, 0, false));
+				theProductLine.AddProduct(new Product("Orange Cheese",Category.DAIRY, "1 kg pkg", 0, 0, 0, false));
+				theProductLine.AddProduct(new Product("Aniseed Syrup", Category.BEVERAGE,"12 - 550 ml bottles", 0, 0, 0, false));
+				theProductLine.AddProduct(new Product("Milk",Category.DAIRY, "1 L pkg", 0, 0, 0, false));
 				
-				foreach (var item in products)
+				foreach (var item in theProductLine.Products)
 					Console.WriteLine(item.ToString());
 
 				List<string> csvLines = new();
-				foreach (var item in products)
+				foreach (var item in theProductLine.Products)
 					csvLines.Add(item.ToString());
 				//write to a csv file. requires System.IOs    
 				File.WriteAllLines(CsvFileName, csvLines);
@@ -160,7 +165,7 @@ namespace WestWindSystem
 		{
 			try
 			{
-				Console.WriteLine("Ex02c Program started. Data from csv file to json file.");
+				Console.WriteLine("Ex02c Program started. Data from good csv file to json file.");
 				Console.WriteLine($"Reading data from file: {CsvFileName}");
 				Supplier theSupplier = new Supplier("Robbins Foods", "780-111-2222");
 				ProductLine theProductLine = new ProductLine(theSupplier);

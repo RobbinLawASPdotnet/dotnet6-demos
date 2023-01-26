@@ -21,9 +21,5 @@ namespace WestWindSystem
 		{
 				return $"Company Name: {CompanyName}, Phone Number: {PhoneNumber}";
 		}
-
-		public static int Add(int num1, int num2){
-				return num1 + num2;
-		}
 	}
 }
