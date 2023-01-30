@@ -19,8 +19,8 @@ namespace WestWindSystem
 			// Creating Supplier, ProductLine, and Products.
 			//app.Ex01b();
 			// Writing only good Product data to a csv file.
-			//app.CsvFileName = "Ex02.dat";
-			//app.Ex02a();
+			app.CsvFileName = "Ex02.dat";
+			app.Ex02a();
 			// Read a csv file of Products and put data into object model if valid.
 			// Choose to have good or bad data
 			//app.CsvFileName = "Ex02.dat";
