@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RenoSystem
+{
+  public class Wall
+  {
+
+    public static Wall Parse(string text)
+    {
+    	string[] pieces = text.Split(',');
+    	if (pieces.Length != 8)
+    	{
+    		throw new FormatException($"String not in expected format. Missing value {text}");
+    	}
+    	Opening WallOpening = new Opening(
+        (OpeningType)Enum.Parse(typeof(OpeningType), pieces[4]), 
+        int.Parse(pieces[5]), 
+        int.Parse(pieces[6]), 
+        int.Parse(pieces[7])
+      );
+    	return new Wall(
+        pieces[0], 
+        int.Parse(pieces[1]), 
+        int.Parse(pieces[2]), 
+        pieces[3], 
+        WallOpening
+      );
+    }
+
+    public static bool TryParse(string text, out Wall result)
+    {
+    	result = null;
+    	bool valid = false;
+    	try
+    	{
+    		if (string.IsNullOrWhiteSpace(text))
+    		{
+    			throw new ArgumentNullException("Parsing string is empty");
+    		}
+    		result = Parse(text);
+    		valid = true;
+    	}
+    	catch (FormatException ex)
+    	{
+    		throw new FormatException(ex.Message);
+    	}
+    	catch (ArgumentNullException ex)
+    	{
+    		throw new ArgumentNullException(ex.Message);
+    	}
+    	catch (ArgumentOutOfRangeException ex)
+    	{
+    		throw new ArgumentOutOfRangeException(ex.Message);
+    	}
+    	catch (ArgumentException ex)
+    	{
+    		throw new ArgumentException(ex.Message);
+    	}
+    	catch (Exception ex)
+    	{
+    		throw new Exception($"TryParse Wall unexpected error: {ex.Message}");
+    	}
+    	return valid;
+    }
+
+    public void DeleteOpening()
+    {
+      
+    }
+
+    public void ReplaceOpening(Opening opening)
+    {
+    	
+    }
+  }
+}
