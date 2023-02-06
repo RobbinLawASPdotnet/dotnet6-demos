@@ -97,7 +97,7 @@ Use the supplied routine to display the contents of a Room.
 > - Comment out the  portion of code
 > - Identify the reason for the commented portion (such *as does not compile* or *does not work cause an abort*)
 
-Your assignment will be marked based upon the following weights. See the [general rubric](../../README.md#generalized-marking-rubric) for details.
+Your assignment will be marked based upon the following weights.
 
 
 | Earning | Weight | Deliverable/Requirement | Comment |
