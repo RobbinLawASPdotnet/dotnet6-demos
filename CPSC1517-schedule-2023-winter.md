@@ -12,8 +12,8 @@
 | Assessment | Submission via | Due 11:59 PM Friday| Mark Distribution |
 |---|---|---|---|
 |Exercise-1 OOP & Composition & Using Unit Tests with Console App|GitHub|Week 4|5%|
-|InClass-1-Code OOP and Composition|GitHub|Week 6|10%|
-|InClass-1-Quiz OOP and Composition|Moodle|Week 6|5%|
+|InClass-1-Code OOP and Composition|GitHub|Week 6 - Monday Feb 13|10%|
+|InClass-1-Quiz OOP and Composition|Moodle|Week 6 - Monday Feb 13|5%|
 |Exercise-2 OOP & File I/O & Writing Unit Tests with Console App|GitHub|Week 7|5%|
 |Exercise-3 FrontEnd with Contact Page & BackEnd with About Page|GitHub|Week 9|5%|
 |InClass-2-Code FrontEnd & BackEnd|GitHub|Week 10|10%|
