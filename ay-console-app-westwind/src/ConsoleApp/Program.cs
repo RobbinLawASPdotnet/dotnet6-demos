@@ -118,7 +118,7 @@ void Ex02b(string csvFileName)
 		Console.WriteLine($"Reading data from file: {csvFileName}");
 		Supplier theSupplier = new Supplier("Robbins Foods", "780-111-2222");
 		ProductLine theProductLine = new ProductLine(theSupplier);
-		//read the csv file and each line becomes a new product added to the productlist.
+		//read the csv file and each line becomes a new product added to the product list.
 		string[] csvFileInput = File.ReadAllLines(csvFileName);
 		Product product = null;
 		//each line read from the file is a string that now has to be parsed into different types.
@@ -159,7 +159,7 @@ void Ex02c(string csvFileName, string jsonFileName)
 		Console.WriteLine($"Reading data from file: {csvFileName}");
 		Supplier theSupplier = new Supplier("Robbins Foods", "780-111-2222");
 		ProductLine theProductLine = new ProductLine(theSupplier);
-		//read the csv file and each line becomes a new product added to the productlist.
+		//read the csv file and each line becomes a new product added to the product list.
 		string[] csvFileInput = File.ReadAllLines(csvFileName);
 		Product product = null;
 		//each line read from the file is a string that now has to be parsed into different types.
