@@ -1,0 +1,27 @@
+{
+  "Supplier": {
+    "CompanyName": "Robbins Foods",
+    "PhoneNumber": "780-111-2222"
+  },
+  "Products": [
+    {
+      "ProductName": "Chia",
+      "Category": 0,
+      "QuantityPerUnit": "10 boxes X 20 bags",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    },
+    {
+      "ProductName": "Orange Cheese",
+      "Category": 1,
+      "QuantityPerUnit": "1 kg pkg",
+      "MinimumOrderQuantity": 0,
+      "UnitPrice": 0,
+      "UnitsOnOrder": 0,
+      "Discontinued": false
+    }
+  ],
+  "TotalProducts": 2
+}

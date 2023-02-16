@@ -8,19 +8,27 @@ using System.Text.Json;
 using WestWindSystem;
 
 // Creating Supplier and Product Line but no Products.
-Ex01a();
+//Ex01a();
 // Creating Supplier, ProductLine, and Products.
-Ex01b();
+//Ex01b();
 // Writing only good Product data to a csv file.
-Ex02a("Ex02.dat");
+//Ex02a("Ex02.dat");
 // Read a csv file of Products and put data into object model if valid.
 // Choose to have good or bad data
-Ex02b("Ex02.dat");
-Ex02b("Ex02BAD.dat");
+//Ex02b("Ex02.dat");
+//Ex02b("Ex02BAD.dat");
 // Write good data from a csv file to a json file
 Ex02c("Ex02.dat", "Ex02.json");
-// Read a json file and put data into object model.
+// Read a json file that only has good data 
+// and put data into object model.
 Ex02d("Ex02.json");
+// Write good and bad data from a csv file
+// buy cull out the bad data and only write
+// the good data to a json file.
+Ex02c("Ex02BAD.dat", "Ex02ONLYGOOD.json");
+// Read a json file that only has good data 
+// and put data into object model.
+Ex02d("Ex02ONLYGOOD.json");
 
 #region Ex01a
 void Ex01a()
@@ -155,7 +163,8 @@ void Ex02c(string csvFileName, string jsonFileName)
 {
 	try
 	{
-		Console.WriteLine("Ex02c Program started. Data from good csv file to json file.");
+		Console.WriteLine("Ex02c Program started.");
+		Console.WriteLine("Taking good data, culling bad data from csv file, and then writing good data to a json file.");
 		Console.WriteLine($"Reading data from file: {csvFileName}");
 		Supplier theSupplier = new Supplier("Robbins Foods", "780-111-2222");
 		ProductLine theProductLine = new ProductLine(theSupplier);
@@ -165,8 +174,18 @@ void Ex02c(string csvFileName, string jsonFileName)
 		//each line read from the file is a string that now has to be parsed into different types.
 		foreach(var line in csvFileInput)
 		{
-			Product.TryParse(line, out product);
-			theProductLine.AddProduct(product);
+			try
+			{
+			bool returnedBool = Product.TryParse(line, out product);
+			//This line of code is here only to show that the bool is always returned.
+			Console.WriteLine($"returnedBool is: {returnedBool} for: {line}");
+			if(returnedBool != false)
+				theProductLine.AddProduct(product);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Exception (Run foreach catch): {ex.Message}");
+			}    
 		}
 		JsonSerializerOptions options = new JsonSerializerOptions
 		{
@@ -190,7 +209,9 @@ void Ex02d(string jsonFileName)
 {
 	try
 	{
-		Console.WriteLine("Ex02d Program started. Read a json file and put data into object model.");
+		Console.WriteLine("Ex02d Program started.");
+		Console.WriteLine("Read a json file and put data into object model.");
+		Console.WriteLine($"Reading data from file: {jsonFileName}");
 		string jsonString = File.ReadAllText(jsonFileName);
 		JsonSerializerOptions options = new JsonSerializerOptions
 		{
