@@ -39,13 +39,15 @@ dotnet dev-certs https --trust
 
 ### Modify `Index.cshtml`
 
-Modify the home page to include the following.
+Modify the home/index page to include the following.
 
 ```html
-<h2>Hi there</h2>
+<h2>This is the Home page!</h2>
 ```
 
-### Update the `_Layout.cshtml`
+### Update the `_Layout.cshtml` file located in the `Pages/Shared` folder.
+
+Kill the server by pressing `ctrl and C` at the same time when the terminal is in focus.
 
 Ensure that the menu navigation has the following items.
 
@@ -53,7 +55,7 @@ Ensure that the menu navigation has the following items.
 - A link to the contact page (`/Contact`) with the text "Contact"
 - A link to the privacy page (`/Privacy`) with the text "Privacy"
 
-### Add `Contact` Page
+### Add a `Contact` Page
 
 Create an `Contact.cshtml`/`Contact.cshtml.cs` Razor Page.
 
@@ -62,6 +64,15 @@ Create an `Contact.cshtml`/`Contact.cshtml.cs` Razor Page.
 cd WebApp
 dotnet new page -n Contact -o Pages
 ```
+
+### Modify `Contact.cshtml`
+
+Modify the Contact presentation page to include the following.
+
+```html
+<h2>This is the Contact page!</h2>
+```
+
 To ensure that your web application works, build and run your project.
 
 ```csharp
