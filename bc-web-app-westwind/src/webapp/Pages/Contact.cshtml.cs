@@ -1,4 +1,7 @@
 //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+//https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references
+
+//#nullable disable
 
 using System;
 using System.Collections.Generic;
@@ -6,21 +9,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-//https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references
-//#nullable disable
+
 namespace MyApp.Namespace
 {
 	public class ContactModel : PageModel
 	{
 		public string Text1{get;set;}
+		public int Number1{get;set;}
+
 		[BindProperty] 
 		public string Text2{get;set;}
 		[BindProperty] 
-		public string Text3{get;set;}
-
-		public int Number1{get;set;}
-		[BindProperty] 
 		public int Number2{get;set;}
+
+		[BindProperty] 
+		public string Text3{get;set;}
 		[BindProperty] 
 		public int Number3{get;set;}
 		
@@ -57,11 +60,11 @@ namespace MyApp.Namespace
 			try
 			{
 				Console.WriteLine($"ContactModel: OnPost");
-				PopulateSelectLists();
 				Text1 = text1;
 				if(!string.IsNullOrEmpty(number1))
 					Number1 = int.Parse(number1);
 
+				PopulateSelectLists();
 				if(ButtonPressed == "Submit")
 				{
 					Console.WriteLine($"checkbox= {CheckBox}");
@@ -78,8 +81,16 @@ namespace MyApp.Namespace
 					SuccessMessage = $"T1={Text1}, T2={Text2}, T3={Text3}, N1={Number1}, N2={Number2}, N3={Number3}, Email={Email}, Date={MyDate}, Subject={SelectListOfSubjects[SelectedSubjectId]}, Text={MessageBody}, CheckBox={CheckBox}, Radio={Radio}";
 				} else if(ButtonPressed == "Clear")
 				{
-					SelectedSubjectId = 0;
+					Text1 = "";
+					Number1 = 0;
+					Text2 = "";
+					Number2 = 0;
+					Text3 = "";
+					Number3 = 0;
+					Email = "";
 					MyDate = DateTime.MinValue;
+					SelectedSubjectId = 0;
+					MessageBody = "";
 					CheckBox = null;
 					Radio = "";
 					SuccessMessage = "Clear Successful";

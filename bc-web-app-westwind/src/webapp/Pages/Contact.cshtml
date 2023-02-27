@@ -20,25 +20,44 @@
 	{
 		<p style="color:green; font-weight: bold;">@Model.SuccessMessage</p>
 	}
-
-	<form method="POST" novalidate>
+	<form method="POST">
+	@* <form method="POST" novalidate> *@
 		<div class="row g-3 mb-3">
+			@* Here we use the name/value pair attributes of the
+			input html element to send the data in the body
+			of the post request.
+			Then in the code behind the name must be in the
+			parameter list of the onPost method to capture
+			the data from the post request. *@
 			<div class="col-4">
 				<input type="text" class="form-control" placeholder="enter text 1" name="text1" value="@Model.Text1" />
 			</div>
 			<div class="col-4">
-				<input type="text" class="form-control" placeholder="enter text 2" name="Text2" value="@Model.Text2" />
-			</div>
-			<div class="col-4">
-				<input type="text" class="form-control" placeholder="enter text 3" asp-for="Text3" />
+				<input type="number" class="form-control" placeholder="enter num 1" name="number1" value="@Model.Number1" />
 			</div>
 		</div>
 		<div class="row g-3 mb-3">
+			@* Here we use the name/value pair attributes of the
+			input html element to send the data in the body
+			of the post request.
+			Then in the code behind the data is bound to
+			the Text2 property automatically because of the
+			[BindProperty] annotation.
+			We do not need a paramenter in the onPost anymore. *@
 			<div class="col-4">
-				<input type="number" class="form-control" placeholder="enter num 1" name="number1" value="@Model.Number1" />
+				<input type="text" class="form-control" placeholder="enter text 2" name="Text2" value="@Model.Text2" />
 			</div>
 			<div class="col-4">
 				<input type="number" class="form-control" placeholder="enter num 2" name="Number2" value="@Model.Number2" />
+			</div>
+		</div>
+		<div class="row g-3 mb-3">
+			@* Here we use the Microsoft tag helper asp-for to directly bind the data to the property in the code behind.
+			In the code behind we must use the [BindProperty] annotation
+			above the property involved.
+			We do not need a paramenter in the onPost anymore. *@
+			<div class="col-4">
+				<input type="text" class="form-control" placeholder="enter text 3" asp-for="Text3" />
 			</div>
 			<div class="col-4">
 				<input type="number" class="form-control" placeholder="enter num 3" asp-for="Number3" />
@@ -134,27 +153,3 @@
 		</div>
 	</form>
 </div>
-
-@*
-	Here we use the name/value pair attributes of the
-	input html element to send the data in the body
-	of the post request.
-	Then in the code behind the name must be in the
-	parameter list of the onPost method to capture
-	the data from the post request
-
-	Here we use the name/value pair attributes of the
-	input html element to send the data in the body
-	of the post request.
-	Then in the code behind the data is bound to
-	the Text2 property automatically because of the
-	[BindProperty] annotation.
-	We do not need a paramenter in the onPost anymore.
-
-	Here we use the Microsoft tag helper asp-for to directly bind the data to the property in the code behind.
-	In the code behind we must use the [BindProperty] annotation
-	above the property involved.
-	We do not need a paramenter in the onPost anymore.
-
-
-*@
