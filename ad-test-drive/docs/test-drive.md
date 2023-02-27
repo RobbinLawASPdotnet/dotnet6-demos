@@ -36,7 +36,7 @@ dotnet new console -n ConsoleApp --framework net6.0
 dotnet new console -n ConsoleApp --framework net6.0 --use-program-main
 # Allow the console project to use the classlib project by referencing it.
 dotnet add ConsoleApp/ConsoleApp.csproj reference Classlib/Classlib.csproj
-# Create a sln file and add all project to it.
+# Create a sln file and add all projects to it.
 dotnet new sln -n App
 dotnet sln "App.sln" add Classlib\Classlib.csproj
 dotnet sln "App.sln" add Tests\Tests.csproj
