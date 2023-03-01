@@ -5,30 +5,33 @@
 @{
 	ViewData["Title"] = "Contact";
 }
-
 <div class="container">
 	<h5>Form Elements</h5>
-
-	<p>The following page shows examples of form elements</p>
-
-	@if(!string.IsNullOrEmpty(Model.ErrorMessage))
-	{
-		<p style="color:red; font-weight: bold;">@Model.ErrorMessage</p>
-	}
-
-	@if(!string.IsNullOrEmpty(Model.SuccessMessage))
-	{
-		<p style="color:green; font-weight: bold;">@Model.SuccessMessage</p>
-	}
 	<form method="POST">
 	@* <form method="POST" novalidate> *@
+		<div class="row g-3 mb-3">
+			<div class="col-4">
+				<select class="form-select" name="SelectedSubjectId">
+					@for (var index = 0; index < Model.SelectListOfSubjects.Count; index++)
+					{
+							<option 
+								value="@index" 
+								selected=@(Model.SelectedSubjectId == index)
+							>
+							@Model.SelectListOfSubjects[index]
+							</option>
+					}
+				</select>
+			</div>
+		</div>
 		<div class="row g-3 mb-3">
 			@* Here we use the name/value pair attributes of the
 			input html element to send the data in the body
 			of the post request.
 			Then in the code behind the name must be in the
 			parameter list of the onPost method to capture
-			the data from the post request. *@
+			the string type data from the post request.
+			We must convert the string data to an int in our code. *@
 			<div class="col-4">
 				<input type="text" class="form-control" placeholder="enter text 1" name="text1" value="@Model.Text1" />
 			</div>
@@ -43,7 +46,8 @@
 			Then in the code behind the data is bound to
 			the Text2 property automatically because of the
 			[BindProperty] annotation.
-			We do not need a paramenter in the onPost anymore. *@
+			We do not need a paramenter in the onPost anymore.
+			Also conversion from a string to an int automatically happens.*@
 			<div class="col-4">
 				<input type="text" class="form-control" placeholder="enter text 2" name="Text2" value="@Model.Text2" />
 			</div>
@@ -78,26 +82,11 @@
 					@* <input type="date" class="form-control" id="date" name="MyDate" value="@Model.MyDate"/> *@
 				}
 			</div>
-			<div class="col-4">
-				<select class="form-select" name="SelectedSubjectId">
-					@for (var index = 0; index < Model.SelectListOfSubjects.Count; index++)
-					{
-						if (Model.SelectedSubjectId == index)
-						{
-							<option value="@index" selected>@Model.SelectListOfSubjects[index]</option>
-						}
-						else
-						{
-							<option value="@index">@Model.SelectListOfSubjects[index]</option>
-						}
-					}
-				</select>
-			</div>
 		</div>
 		<div class="row g-3 mb-3">
 			<div class="col-4">
 				<textarea class="form-control" 
-				rows="5" cols="60" placeholder="enter your message" name="MessageBody">@Model.MessageBody
+				rows="2" cols="60" placeholder="enter your message" name="MessageBody">@Model.MessageBody
 				</textarea>
 			</div>
 		</div>
@@ -152,4 +141,13 @@
 			</div>
 		</div>
 	</form>
+	@if(!string.IsNullOrEmpty(Model.ErrorMessage))
+	{
+		<p style="color:red; font-weight: bold;">@Model.ErrorMessage</p>
+	}
+
+	@if(!string.IsNullOrEmpty(Model.SuccessMessage))
+	{
+		<p style="color:green; font-weight: bold;">@Model.SuccessMessage</p>
+	}
 </div>

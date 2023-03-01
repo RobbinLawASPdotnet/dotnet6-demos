@@ -14,6 +14,10 @@ namespace MyApp.Namespace
 {
 	public class ContactModel : PageModel
 	{
+		public string SuccessMessage {get; set;}
+		public string ErrorMessage {get; set;}
+		public List<Exception> errors {get; set;} = new();
+		
 		public string Text1{get;set;}
 		public int Number1{get;set;}
 
@@ -31,9 +35,6 @@ namespace MyApp.Namespace
 		public string Email{get;set;}
 		[BindProperty]
 		public DateTime MyDate{get;set;}
-		public List<string> SelectListOfSubjects{get;set;}
-		[BindProperty]
-		public int SelectedSubjectId {get;set;}
 		[BindProperty]
 		public string MessageBody{get;set;}
 		[BindProperty]
@@ -45,14 +46,26 @@ namespace MyApp.Namespace
 		[BindProperty]
 		public string ButtonPressed {get; set;}
 
-		public string SuccessMessage {get; set;}
-		public string ErrorMessage {get; set;}
-		public List<Exception> errors {get; set;} = new();
+		public List<string> SelectListOfSubjects{get;set;}
+		[BindProperty]
+		public int SelectedSubjectId {get;set;}
 
 		public void OnGet()
 		{
 				Console.WriteLine($"ContactModel: OnGet");
 				PopulateSelectLists();
+		}
+
+		private void PopulateSelectLists()
+		{
+			try
+			{
+				SelectListOfSubjects = new List<string>(){"select...", "Contributing", "Request Membership", "Bug Report"};  
+			}
+			catch (Exception e)
+			{ 
+				ErrorMessage = GetInnerException(e);
+			}
 		}
 
 		public IActionResult OnPost(string text1, string number1)
@@ -65,6 +78,7 @@ namespace MyApp.Namespace
 					Number1 = int.Parse(number1);
 
 				PopulateSelectLists();
+				
 				if(ButtonPressed == "Submit")
 				{
 					Console.WriteLine($"checkbox= {CheckBox}");
@@ -106,18 +120,6 @@ namespace MyApp.Namespace
 				ErrorMessage = GetInnerException(e);
 			}
 			return Page();
-		}
-
-		private void PopulateSelectLists()
-		{
-			try
-			{
-				SelectListOfSubjects = new List<string>(){"select...", "Contributing", "Request Membership", "Bug Report"};  
-			}
-			catch (Exception e)
-			{ 
-				ErrorMessage = GetInnerException(e);
-			}
 		}
 
 		public string GetInnerException(Exception e)
