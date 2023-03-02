@@ -143,11 +143,11 @@
 	</form>
 	@if(!string.IsNullOrEmpty(Model.ErrorMessage))
 	{
-		<p style="color:red; font-weight: bold;">@Model.ErrorMessage</p>
+		<p class="error-message">@Model.ErrorMessage</p>
 	}
 
 	@if(!string.IsNullOrEmpty(Model.SuccessMessage))
 	{
-		<p style="color:green; font-weight: bold;">@Model.SuccessMessage</p>
+		<p class="success-message">@Model.SuccessMessage</p>
 	}
 </div>
