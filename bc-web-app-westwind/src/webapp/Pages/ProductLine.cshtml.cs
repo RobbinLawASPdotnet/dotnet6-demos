@@ -5,10 +5,10 @@ using System.Text.Json;
 
 namespace MyApp.Namespace
 {
-    public class RoyalFamilyModel : PageModel
+    public class ProductLineModel : PageModel
     {
         private IWebHostEnvironment WebHostEnvironment;
-        public RoyalFamilyModel(IWebHostEnvironment webHostEnvironment)
+        public ProductLineModel(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
