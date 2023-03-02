@@ -1,0 +1,37 @@
+﻿@page
+@model MyApp.Namespace.RoyalFamilyModel
+@{
+	ViewData["Title"] = "ProductLine";
+}
+<h1>Product Line</h1>
+@{
+	if (Model.TheProductLine != null)
+	{
+		<h2>@Model.TheProductLine.Supplier.CompanyName</h2>
+		<h2>@Model.TheProductLine.Supplier.PhoneNumber</h2>
+		<table class="table table-hover">
+			<thead>
+				<th>Name</th>
+				<th>Category</th>
+				<th>QuantPerUnit</th>
+				<th>UnitPrice</th>
+				<th>Dis</th> 
+			</thead>
+			<tbody>
+				@foreach (var item in Model.TheProductLine.Products)
+				{
+					<tr>
+						<td>@item.ProductName</td>
+						<td>@item.Category</td>
+						<td>@item.QuantityPerUnit</td>
+						<td>@item.UnitPrice</td>
+						<td>
+							<input type="checkbox" disabled checked="@item.Discontinued">
+						</td>
+					</tr>
+				}
+			</tbody>
+
+		</table>
+	}
+}
