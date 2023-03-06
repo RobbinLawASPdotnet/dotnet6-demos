@@ -4,17 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace Entities
+namespace ViewModels
 {
-	[Table("BuildVersion")]
-	public partial class BuildVersion
+	public class DbVersionView
 	{
-		[Key]
 		public int Id { get; set; }
 		public int Major { get; set; }
 		public int Minor { get; set; }
 		public int Build { get; set; }
-		[Column(TypeName = "datetime")]
 		public DateTime ReleaseDate { get; set; }
 
 		public override string ToString() 

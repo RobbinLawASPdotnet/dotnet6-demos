@@ -15,7 +15,7 @@ namespace DAL
 		{
 		}
 
-		public DbSet<BuildVersion> BuildVersions { get; set; }
+		public DbSet<DbVersion> DbVersions { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<OrderDetail> OrderDetails { get; set; }
 		public DbSet<Product> Products { get; set; }

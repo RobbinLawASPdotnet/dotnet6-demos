@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 // Additional Namespaces
-using Entities;
+using ViewModels;
 using BLL;
 #nullable disable
 
@@ -19,7 +19,7 @@ namespace MyApp.Namespace
 		   Services = services;
 		}
 
-		public BuildVersion DatabaseVersion { get; set; }
+		public DbVersionView DatabaseVersion { get; set; }
 
 		public string SuccessMessage {get; set;}
 		public string ErrorMessage {get; set;}

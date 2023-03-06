@@ -3,12 +3,12 @@
 @{
 	ViewData["Title"] = "ProductLine";
 }
-<h1>Product Line</h1>
+<h5>Product Line</h5>
 @{
 	if (Model.TheProductLine != null)
 	{
-		<h2>@Model.TheProductLine.Supplier.CompanyName</h2>
-		<h2>@Model.TheProductLine.Supplier.PhoneNumber</h2>
+		<h6>@Model.TheProductLine.Supplier.CompanyName</h6>
+		<h6>@Model.TheProductLine.Supplier.PhoneNumber</h6>
 		<table class="table table-hover">
 			<thead>
 				<th>Name</th>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 // Additional Namespaces
 using DAL;
-using Entities;
+using ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace BLL 
@@ -24,11 +24,21 @@ namespace BLL
 		#endregion
 
 		#region Queries
-		public BuildVersion GetDbVersion() 
+		public DbVersionView GetDbVersion() 
 		{
-				Console.WriteLine($"DbServices: GetDbVersion;");
-				var result = Context.BuildVersions.ToList();
-				return result.First();
+			Console.WriteLine($"DbServices: GetDbVersion;");
+			List<DbVersionView> info = 
+			Context.DbVersions
+			.Select(x => new DbVersionView
+			{
+				Id = x.Id,
+				Major = x.Major,
+				Minor = x.Minor,
+				Build = x.Build,
+				ReleaseDate = x.ReleaseDate
+			})
+			.ToList();
+			return info.First();
 		}
 		#endregion 
 	}
