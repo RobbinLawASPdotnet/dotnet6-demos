@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 // Additional Namespaces
 using ViewModels;
 using BLL;
-#nullable disable
 
 namespace MyApp.Namespace
 {
