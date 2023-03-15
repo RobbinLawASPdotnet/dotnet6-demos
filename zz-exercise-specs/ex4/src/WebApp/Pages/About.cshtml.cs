@@ -29,6 +29,7 @@ namespace MyApp.Namespace
 			{
 				Console.WriteLine($"AboutModel: OnGet");
 				DatabaseVersion = Services.GetDbVersion();
+				Console.WriteLine($"XXXXXXXXXXXXXXXXXXX: {DatabaseVersion.ToString()}");
 				SuccessMessage = $"Database Retrieve Successful";
 			}
 			catch (Exception ex)

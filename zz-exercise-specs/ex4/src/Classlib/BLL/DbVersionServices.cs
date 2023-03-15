@@ -28,7 +28,8 @@ namespace BLL
 		{
 			Console.WriteLine($"DbServices: GetDbVersion;");
 			List<DbVersionView> info = 
-			Context.DbVersions
+			Context
+			.DbVersions
 			.Select(x => new DbVersionView
 			{
 				Id = x.Id,
