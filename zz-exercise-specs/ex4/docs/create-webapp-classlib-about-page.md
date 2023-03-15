@@ -329,7 +329,9 @@ Here is the `About.cshtml` presentation page.
 		<th>Database's Version</th>
 	</tr>
 	<tr>
-		<td>@Model.DatabaseVersion.ToString()</td>
+		@if(Model.DatabaseVersion != null){
+			<td>@Model.DatabaseVersion.ToString()</td>
+		}
 	</tr>
 </table>
 
