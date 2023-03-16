@@ -291,9 +291,17 @@ The `DATABASENAME` is the actual name of the database you are trying to connect 
 If you have a `named instance` for your SQL Server instance you must
 replace the `Server=.;` with `Server=COMPUTERNAME\SQLSERVERINSTANCENAME;`
 
-For example Server=ANTONIO-PC\\SQLEXPRESS where the COMPUTERNAME is ANTONIO-PC and the SQLSERVERINSTANCENAME is \SQLEXPRESS.
+For example `Server=ANTONIO-PC\\SQLEXPRESS` where the `COMPUTERNAME` is `ANTONIO-PC` and the `SQLSERVERINSTANCENAME` is `\SQLEXPRESS`.
 
-To find your SQLSERVERINSTANCENAME you have to look at the service in the Computer Management App, for example the service called SQL SERVER (MSSQLSERVER) is the default instance and this is when you can use Server=.;
+```csharp
+"ConnectionStrings": {
+	"DB" : "Server=ANTONIO-PC\\SQLEXPRESS;Database=Renos;Integrated Security=true; Trust Server Certificate=true"
+  },
+```
+
+To find your `COMPUTERNAME` you have to look in the `system` info.
+
+To find your `SQLSERVERINSTANCENAME` you have to look at the service name in the Computer Management App, for example the service called `SQL SERVER (MSSQLSERVER)` is the `default instance` and this is when you can use `Server=.;`
 
 ---
 ### Create The `About` Page
