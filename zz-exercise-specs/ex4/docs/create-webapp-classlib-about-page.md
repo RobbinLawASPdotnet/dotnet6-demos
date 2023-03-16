@@ -1,4 +1,4 @@
-# Create a Back-End and Front-End Web App
+# Create a Front-End Web App and a Back-End Class Library
 
 ### Links
 
@@ -10,7 +10,7 @@
 
 In the docs folder is a `.bacpac` file that is the compressed database.
 
-Use the Microsoft SQL Server Management tool to install the database.
+Use the Microsoft SQL Server Management Studio tool to install the database.
 
 ### Create the Project Templates
 
@@ -284,7 +284,7 @@ The `DATABASENAME` is the actual name of the database you are trying to connect 
 
 ```csharp
 "ConnectionStrings": {
-	"DB" : "Server=.;Database=DATABASENAME;Integrated Security=true;"
+	"DB" : "Server=.;Database=DATABASENAME;Integrated Security=true; Trust Server Certificate=true"
   },
 ```
 
