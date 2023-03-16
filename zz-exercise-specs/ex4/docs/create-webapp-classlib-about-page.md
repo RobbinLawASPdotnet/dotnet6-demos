@@ -6,6 +6,12 @@
 
 ---
 
+### Install the database
+
+In the docs folder is a `.bacpac` file that is the compressed database.
+
+Use the Microsoft SQL Server Management tool to install the database.
+
 ### Create the Project Templates
 
 We will create (.NET Core 6):
@@ -283,7 +289,11 @@ The `DATABASENAME` is the actual name of the database you are trying to connect 
 ```
 
 If you have a `named instance` for your SQL Server instance you must
-replace the `Server=.;` with `Server=INSTANCENAME;`
+replace the `Server=.;` with `Server=COMPUTERNAME\SQLSERVERINSTANCENAME;`
+
+For example Server=ANTONIO-PC\\SQLEXPRESS where the COMPUTERNAME is ANTONIO-PC and the SQLSERVERINSTANCENAME is \SQLEXPRESS.
+
+To find your SQLSERVERINSTANCENAME you have to look at the service in the Computer Management App, for example the service called SQL SERVER (MSSQLSERVER) is the default instance and this is when you can use Server=.;
 
 ---
 ### Create The `About` Page
