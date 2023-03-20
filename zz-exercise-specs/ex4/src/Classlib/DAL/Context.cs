@@ -14,5 +14,7 @@ namespace DAL
 			: base(options) {}
 
 		public DbSet<DbVersion> DbVersions { get; set; }
+		public DbSet<Job> Jobs { get; set; }
+		public DbSet<Supply> Supplies { get; set; }
 	}
 }

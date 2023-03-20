@@ -23,6 +23,19 @@ namespace webclasslib
 				var context = serviceProvider.GetRequiredService<Context>();
 				return new DbVersionServices(context);
 			});
+
+			services.AddTransient<JobServices>((serviceProvider) =>
+			{
+				var context = serviceProvider.GetRequiredService<Context>();
+				return new JobServices(context);
+			});
+
+			services.AddTransient<SupplyServices>((serviceProvider) =>
+			{
+				var context = serviceProvider.GetRequiredService<Context>();
+				return new SupplyServices(context);
+			});
+			
 		}
 	}
 }
