@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ViewModels
 {
 
-	public class ProductList
+	public class SupplyList
 	{
 		public int SupplyId { get; set; }
 		public int JobId { get; set; }

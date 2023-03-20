@@ -6,6 +6,7 @@
 
 <form method="post" novalidate>
 <div class="row text-center">
+@* Query Section Start*@
 <div class="col-6 justify-content-center">
 	<h5>Product Query</h5>
 	<div class="row mb-3 justify-content-center">
@@ -90,8 +91,10 @@
 		</table>
 		</div>
 	}
-	</div>
+</div>
+@* Query Section End*@
 <div class="col-1"></div>
+@* Crud Section Start*@
 <div class="col-5">
 	<h5>Product Crud</h5>
 	<div class="row mb-3">
@@ -203,6 +206,7 @@
 		<p class="success-message">@Model.SuccessMessage</p>
 	}
 </div>
+@* Crud Section End*@
 </div>
 </form>
 
