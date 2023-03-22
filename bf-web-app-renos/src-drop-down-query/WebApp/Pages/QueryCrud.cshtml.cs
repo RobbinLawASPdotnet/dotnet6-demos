@@ -31,7 +31,7 @@ namespace MyApp.Namespace
 		[BindProperty]
 		public int SelectedJobId {get;set;}
 		[BindProperty]
-		public List<SupplyList> SearchedSupplies { get; set; }
+		public List<SupplyItem> SearchedSupplies { get; set; }
 		[BindProperty]
 		public List<SelectionList> SelectListOfJobs {get;set;}
 		

@@ -26,7 +26,7 @@ namespace BLL
 
 		#region Queries
 
-		public List<SupplyItem> FindSuppliesByJob(int? id)
+		public List<SupplyItem> FindSuppliesByJob(int id)
 		{
 			Console.WriteLine($"SupplyServices: FindSuppliesByJob(); id= {id}");
 			var info = 
@@ -38,7 +38,7 @@ namespace BLL
 					JobId = x.JobId,
 					Material = x.Material,
 					Quantity = x.Quantity,
-					MaterialCost = x.MaterialCost,
+					MaterialCost = x.MaterialCost
 				})
 				.OrderBy(x => x.Material);
 			return info.ToList();
@@ -47,34 +47,30 @@ namespace BLL
 
 				#region READ - Retrieve, Edit, Add, Delete
 
-		public ProductItem Retrieve(int id)
+		public SupplyItem Retrieve(int id)
 		{
 			var info = 
-				Context.Products
-				.Where(x => x.ProductId == id)
-				.Select(x => new ProductItem
+				Context.Supplies
+				.Where(x => x.SupplyId == id)
+				.Select(x => new SupplyItem
 				{
-					ProductId = x.ProductId,
-					ProductName = x.ProductName,
-					SupplierId = x.SupplierId,
-					CategoryId = x.CategoryId,
-					QuantityPerUnit = x.QuantityPerUnit,
-					MinimumOrderQuantity = x.MinimumOrderQuantity,
-					UnitPrice = x.UnitPrice,
-					UnitsOnOrder = x.UnitsOnOrder,
-					Discontinued = x.Discontinued
+					SupplyId = x.SupplyId,
+					JobId = x.JobId,
+					Material = x.Material,
+					Quantity = x.Quantity,
+					MaterialCost = x.MaterialCost
 				}).FirstOrDefault();
 			return info;
 		}
 
-		public void Edit(ProductItem item)
+		public void Edit(SupplyItem item)
 		{
-				Console.WriteLine($"ProductServices: Edit; productId= {item.ProductId}");
+				Console.WriteLine($"SupplyServices: Edit; supplyId= {item.SupplyId}");
 
 				//BLL Validation
-				Product existing = Context.Products.Find(item.ProductId);
+				Supply existing = Context.Supplies.Find(item.SupplyId);
 					if (existing == null)
-						throw new Exception("Product does not exist");
+						throw new Exception("Supply does not exist");
 					
 				existing.ProductId = item.ProductId;
 				existing.ProductName = item.ProductName;
@@ -91,9 +87,9 @@ namespace BLL
 				Context.SaveChanges();
 		}
 
-		public int Add(ProductItem item)
+		public int Add(SupplyItem item)
 		{
-			Console.WriteLine($"ProductServices: Add; productId= {item.ProductId}");
+			Console.WriteLine($"SupplyServices: Add; supplyId= {item.SupplyId}");
 
 			//BLL Validation
 			//for no product duplicates
