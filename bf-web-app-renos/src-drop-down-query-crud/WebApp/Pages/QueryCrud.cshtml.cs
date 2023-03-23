@@ -42,7 +42,7 @@ namespace MyApp.Namespace
 		{
 			try
 			{
-				Console.WriteLine("QueryModel: OnGet");
+				Console.WriteLine("QueryCrudModel: OnGet");
 				PopulateSelectLists();
 			}
 			catch (Exception ex)
@@ -56,11 +56,11 @@ namespace MyApp.Namespace
 		{
 			try
 			{
-				Console.WriteLine("QueryModel: OnPost");
+				Console.WriteLine("QueryCrudModel: OnPost");
 
-				if(ButtonPressed == "SearchByCategory")
+				if(ButtonPressed == "SearchByDropdown")
 				{
-					SuccessMessage = "Search by Category Dropdown";
+					SuccessMessage = "Search by Dropdown Successful";
 				}
 				else if(ButtonPressed == "Add")
 				{
@@ -113,7 +113,7 @@ namespace MyApp.Namespace
 		{
 			try
 			{
-				Console.WriteLine("Querymodel: PopulateSelectLists");
+				Console.WriteLine("QueryCrudModel: PopulateSelectLists");
 				SelectListOfJobs = JobServices.ListJobs();
 				
 			}
@@ -128,8 +128,12 @@ namespace MyApp.Namespace
 			try
 			{
 				Console.WriteLine($"QueryCrudModel: GetSupplies");
+				if(SelectedJobId == 0)
+				{
+					SuccessMessage = null;
+					throw new Exception("Please Choose a Job");
+				}
 				SearchedSupplies = SupplyServices.FindSuppliesByJob(SelectedJobId);
-				Console.WriteLine($"First Supply: {SearchedSupplies[0].Material}");
 			}
 			catch (Exception ex)
 			{ 
