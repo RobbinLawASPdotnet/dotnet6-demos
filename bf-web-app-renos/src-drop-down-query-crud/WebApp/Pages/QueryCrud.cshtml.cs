@@ -28,12 +28,15 @@ namespace MyApp.Namespace
 		public List<Exception> Errors {get; set;} = new();
 		[BindProperty]
 		public string ButtonPressed {get; set;}
+
 		[BindProperty]
 		public int SelectedJobId {get;set;}
 		[BindProperty]
 		public List<SupplyItem> SearchedSupplies { get; set; }
 		[BindProperty]
 		public List<SelectionList> SelectListOfJobs {get;set;}
+		[BindProperty]
+		public SupplyItem Supply {get;set;} = new();
 		
 		public IActionResult OnGet()
 		{
@@ -59,6 +62,34 @@ namespace MyApp.Namespace
 				{
 					SuccessMessage = "Search by Category Dropdown";
 				}
+				else if(ButtonPressed == "Add")
+				{
+					FormValidation();
+					Supply.SupplyId = SupplyServices.Add(Supply);
+					SuccessMessage = "Add Successful";
+				}
+				else if(ButtonPressed == "Update")
+				{
+					FormValidation();
+					SupplyServices.Edit(Supply);
+					SuccessMessage = "Update Successful";
+				}
+				else if(ButtonPressed == "Delete")
+				{
+					SupplyServices.Delete(Supply);
+					Supply = new SupplyItem();
+					SuccessMessage = "Delete Successful";
+				}
+				else if(ButtonPressed == "Clear")
+				{
+					Supply = new SupplyItem();
+					SuccessMessage = "Clear Successful";
+				}
+				else if(Supply.SupplyId != 0)
+				{
+						Supply = SupplyServices.Retrieve(Supply.SupplyId);
+						SuccessMessage = "Retrieve Successful";
+				}				
 				else 
 				{
 					ErrorMessage = "Danger: At the end of our ropes!";
@@ -98,6 +129,7 @@ namespace MyApp.Namespace
 			{
 				Console.WriteLine($"QueryCrudModel: GetSupplies");
 				SearchedSupplies = SupplyServices.FindSuppliesByJob(SelectedJobId);
+				Console.WriteLine($"First Supply: {SearchedSupplies[0].Material}");
 			}
 			catch (Exception ex)
 			{ 
@@ -112,6 +144,26 @@ namespace MyApp.Namespace
 					rootCause = rootCause.InnerException;
 			return rootCause.Message;
 		}
+
+		public void FormValidation()
+		{
+			if(string.IsNullOrEmpty(Supply.Material))
+				Errors.Add(new Exception("Material"));
+			if(Supply.JobId == 0)
+				Errors.Add(new Exception("Job"));
+			if(Supply.Quantity == 0)
+				Errors.Add(new Exception("Quantity"));
+
+			if (Errors.Count() > 0)
+					throw new AggregateException("Invalid Data: ", Errors);
+
+			if(Supply.Material.Length > 100)
+				Errors.Add(new Exception("Material > 40"));
+			
+			if (Errors.Count() > 0)
+					throw new AggregateException("Invalid Data: ", Errors);
+		}
+
 	}
 }
 

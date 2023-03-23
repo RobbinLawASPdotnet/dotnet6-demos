@@ -43,9 +43,10 @@ namespace BLL
 				.OrderBy(x => x.Material);
 			return info.ToList();
 		}
+
 		#endregion
 
-				#region READ - Retrieve, Edit, Add, Delete
+		#region READ - Retrieve, Edit, Add, Delete
 
 		public SupplyItem Retrieve(int id)
 		{
@@ -72,17 +73,12 @@ namespace BLL
 					if (existing == null)
 						throw new Exception("Supply does not exist");
 					
-				existing.ProductId = item.ProductId;
-				existing.ProductName = item.ProductName;
-				existing.SupplierId = item.SupplierId;
-				existing.CategoryId = item.CategoryId;
-				existing.QuantityPerUnit = item.QuantityPerUnit;
-				existing.MinimumOrderQuantity = item.MinimumOrderQuantity;
-				existing.UnitPrice = item.UnitPrice;
-				existing.UnitsOnOrder = item.UnitsOnOrder;
-				existing.Discontinued = item.Discontinued;
+				existing.JobId = item.JobId;
+				existing.Material = item.Material;
+				existing.Quantity = item.Quantity;
+				existing.MaterialCost = item.MaterialCost;
 
-				EntityEntry<Product> updating = Context.Entry(existing);
+				EntityEntry<Supply> updating = Context.Entry(existing);
 				updating.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 				Context.SaveChanges();
 		}
@@ -92,56 +88,42 @@ namespace BLL
 			Console.WriteLine($"SupplyServices: Add; supplyId= {item.SupplyId}");
 
 			//BLL Validation
-			//for no product duplicates
+			//for no supply duplicates
 			var exists = 
-				Context.Products.FirstOrDefault(x => 
-				x.ProductName == item.ProductName && 
-				x.SupplierId == item.SupplierId &&
-				x.CategoryId == item.CategoryId &&  
-				x.QuantityPerUnit == item.QuantityPerUnit);
+				Context.Supplies.FirstOrDefault(x => 
+				x.JobId == item.JobId && 
+				x.Material == item.Material &&
+				x.Quantity == item.Quantity &&  
+				x.MaterialCost == item.MaterialCost);
 			if (exists != null)
-				throw new Exception("A product with the same name, supplier, category, and quantity per unit already exists");
+				throw new Exception("A supply with the same job, material, quantity, and material cost already exists");
 
-			var newProduct = new Product();
-			newProduct.ProductId = item.ProductId;
-			newProduct.ProductName = item.ProductName;
-			newProduct.SupplierId = item.SupplierId;
-			newProduct.CategoryId = item.CategoryId;
-			newProduct.QuantityPerUnit = item.QuantityPerUnit;
-			newProduct.MinimumOrderQuantity = item.MinimumOrderQuantity;
-			newProduct.UnitPrice = item.UnitPrice;
-			newProduct.UnitsOnOrder = item.UnitsOnOrder;
-			newProduct.Discontinued = item.Discontinued;
+			var newSupply = new Supply();
+			newSupply.SupplyId = item.SupplyId;
+			newSupply.JobId = item.JobId;
+			newSupply.Material = item.Material;
+			newSupply.Quantity = item.Quantity;
+			newSupply.MaterialCost = item.MaterialCost;
 
-			Context.Products.Add(newProduct);
+			Context.Supplies.Add(newSupply);
 			Context.SaveChanges();
-			return newProduct.ProductId;
+			return newSupply.SupplyId;
 		}
 
-		public void Delete(ProductItem item)
+		public void Delete(SupplyItem item)
 		{
-			Console.WriteLine($"ProductServices: Delete; productId= {item.ProductId}");
+			Console.WriteLine($"SupplyServices: Delete; supplyId= {item.SupplyId}");
 
 			//BLL Validation
-			Product existing = Context.Products.Find(item.ProductId);
+			Supply existing = Context.Supplies.Find(item.SupplyId);
 				if (existing == null)
-			 		throw new Exception("Product does not exist");
+			 		throw new Exception("Supply does not exist");
 
-			//BLL Validation
-			//cannot delete product if it is in the OderDetail table
-			List<OrderDetail> OrderDetailRecords = 
-				Context.OrderDetails
-				.Where(x => 
-					x.ProductId == item.ProductId)
-				.ToList();
-			if(OrderDetailRecords.Count != 0)
-					throw new Exception("Cannot delete this Product as it is in the OrderDetails table");
-
-			EntityEntry<Product> removing = Context.Entry(existing);
+			EntityEntry<Supply> removing = Context.Entry(existing);
 			removing.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
 			Context.SaveChanges();
 		}
-		#endregion
-		
+
+		#endregion	
 	}
 }

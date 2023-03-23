@@ -1,18 +1,95 @@
-html {
-  font-size: 14px;
+:root {
+  --rem-font-size: 16px;
+  --body-width: 80rem;
+  --body-margin: 60px;
+  --bg-color: #b5b5b5;
+  --bg-color-success: seagreen;
+  --bg-color-error: salmon;
+  --text-color-error: #fff;
+  --text-color-success: #fff;
+  --box-shadow: 0px 0px 0px 0.25rem rgba(66, 70, 73, 0.5);
+  --border-color: #212529;
+  --background-color: #212529;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.error-message {
+  color: var(--bg-color-error);
+  font-weight: bold;
 }
 
-html {
+.success-message {
+  color: var(--bg-color-success);
+  font-weight: bold;
+}
+
+button.link {
+background: none;
+border: none;
+padding: 0;
+}
+
+button.link:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#table_box_bootstrap{
+  display: none;
+}
+
+.box div, .box ul {
+  float: right;
+}
+
+.pagination>li>a{
   position: relative;
-  min-height: 100%;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: var(--border-color);
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.pagination>.active>a{
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+
+.form-control:focus {
+    border-color: var(--border-color);
+    box-shadow:  var(--box-shadow);
+}
+	
+.form-select:focus {
+  border-color: var(--border-color);
+  box-shadow:  var(--box-shadow);
+}
+
+.dropdown-item:active {
+  color: #fff;
+  background-color: var(--background-color);
+}
+
+.form-check-input:checked {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+.form-check-input:focus {
+  border-color: var(--border-color);
+  outline: 0;
+  box-shadow:  var(--box-shadow);
+}
+
+html {
+  font-size: var(--rem-font-size);
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: var(--body-margin);
 }

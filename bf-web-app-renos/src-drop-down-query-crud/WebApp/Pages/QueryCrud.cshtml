@@ -10,7 +10,7 @@
 <div class="col-6 justify-content-center">
 	<h5>Supplies Query</h5>
 	<div class="row mb-3 justify-content-center">
-		<div class="col-2">
+		<div class="col-1">
 			<label for="SelectedJobId" class="col-form-label">Job</label>
 		</div>
 		<div class="col-4">
@@ -28,53 +28,135 @@
 				}
 			</select>
 		</div>
-		<div class="col-2">
+		<div class="col-1">
 			<button type="submit" class="btn btn-dark" 
-				name="ButtonPressed" value="SearchByJob">
+				name="ButtonPressed" value="SearchByCategory">
 				Search
 			</button>
 		</div>
 	</div>
 	@if(Model.SearchedSupplies != null)
 	{
-		<div id="table_box_bootstrap">
 		<table class="table table-hover">
-		<thead>
-		<tr>
-			<th>Action</th>
-			<th>SupplyId</th>
-			<th>JobId</th>
-			<th>Material</th>
-			<th>Quantity</th>
-			<th>MaterialCost</th>       
-		</tr>
-		</thead>
-		<tbody>
-		@if(Model.SearchedSupplies.Count == 0)
-		{
-		<tr><td colspan="6"><i>There are no Supplies available.</i></td></tr>
-		}
-		@foreach(var item in Model.SearchedSupplies)
-		{
-		<tr>
-			<td>
-				<button type="submit" class="btn btn-dark" 
-				name="Supply.SupplyId" value="@item.SupplyId">
-				Edit
-				</button>
-			</td>
-			<td>@item.SupplyId</td>
-			<td>@item.JobId</td>
-			<td>@item.Material</td>
-			<td>@item.Quantity</td>
-			<td>@item.MaterialCost</td>
-		</tr>
-		}
-		</tbody>
+			<thead>
+			<tr>
+				<th>Action</th>
+				<th>SupplyId</th>
+				<th>JobId</th>
+				<th>Material</th>
+				<th>Quantity</th>
+				<th>MaterialCost</th>       
+			</tr>
+			</thead>
+			<tbody>
+			@if(Model.SearchedSupplies.Count == 0)
+			{
+			<tr><td colspan="6"><i>There are no Supplies available.</i></td></tr>
+			}
+			@foreach(var item in Model.SearchedSupplies)
+			{
+			<tr>
+				<td>
+					<button type="submit" class="btn btn-dark" 
+					name="Supply.SupplyId" value="@item.SupplyId">
+					Edit
+					</button>
+				</td>
+				<td>@item.SupplyId</td>
+				<td>@item.JobId</td>
+				<td>@item.Material</td>
+				<td>@item.Quantity</td>
+				<td>@item.MaterialCost</td>
+			</tr>
+			}
+			</tbody>
 		</table>
-		</div>
+	}
+	else
+	{
+		<h4>SearchedSupplies is null</h4>
 	}
 </div>
 @* Query Section End*@
+<div class="col-1"></div>
+@* Crud Section Start*@
+<div class="col-5">
+	<h5>Supply Crud</h5>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="SupplyId" class="col-form-label">Id</label>
+			<input type="number" class="form-control" readonly id="SupplyId" 
+				name="Supply.SupplyId" value="@Model.Supply.SupplyId" />
+		</div>
+		<div class="col">
+			<label for="Material" class="col-form-label">Material</label>
+			<input type="text" class="form-control" id="Material" 
+				name="Supply.Material" value="@Model.Supply.Material" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="jobId" class="col-form-label">Job</label>
+			<select class="form-select" id="JobId" name="Supply.JobId">
+				<option value="0">select ...</option>
+				@foreach (var item in Model.SelectListOfJobs)
+				{
+					<option value="@item.ValueField" 
+					selected=@(Model.Supply.JobId == item.ValueField)>
+					@item.DisplayField
+					</option>
+				}
+			</select>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="Quantity" class="col-form-label">
+				Quantity
+			</label>
+			<input type="number" min="0" class="form-control" id="Quantity" 
+				name="Supply.Quantity" value="@Model.Supply.Quantity"/>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col">
+			<label for="MaterialCost" class="col-form-label">Material Cost</label>
+			<input type="number" min="0" class="form-control" id="MaterialCost" 
+				name="Supply.MaterialCost" value="@Model.Supply.MaterialCost"/>
+		</div>
+	</div>
+	<div class="row mb-3 justify-content-center">
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark"
+				disabled=@(Model.Supply.SupplyId != 0) 
+				name="ButtonPressed" value="Add">&nbsp;Add&nbsp;&nbsp;&nbsp;</button>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+			disabled=@(Model.Supply.SupplyId == 0)
+			name="ButtonPressed" value="Update">Update</button>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+			disabled=@(Model.Supply.SupplyId == 0)
+			name="ButtonPressed" value="Delete">Delete</button>
+		</div>
+		<div class="col-2">
+			<button type="submit" class="btn btn-dark" 
+				name="ButtonPressed" value="Clear">Clear</button>
+		</div>
+	</div>
+	
+	@if(!string.IsNullOrEmpty(Model.ErrorMessage))
+	{
+		<p class="error-message">@Model.ErrorMessage</p>
+	}
+
+	@if(!string.IsNullOrEmpty(Model.SuccessMessage))
+	{
+		<p class="success-message">@Model.SuccessMessage</p>
+	}
+</div>
+@* Crud Section End*@
 </div>
 </form>
