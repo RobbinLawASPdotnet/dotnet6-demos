@@ -31,7 +31,7 @@ namespace MyApp.Namespace
 		[BindProperty]
 		public int SelectedJobId {get;set;}
 		[BindProperty]
-		public List<SupplyList> SearchedSupplies { get; set; }
+		public List<SupplyItem> SearchedSupplies { get; set; }
 		[BindProperty]
 		public List<SelectionList> SelectListOfJobs {get;set;}
 		
@@ -54,15 +54,8 @@ namespace MyApp.Namespace
 			try
 			{
 				Console.WriteLine("QueryModel: OnPost");
+				//TODO1: Put your code in this try
 
-				if(ButtonPressed == "SearchByCategory")
-				{
-					SuccessMessage = "Search by Category Dropdown";
-				}
-				else 
-				{
-					ErrorMessage = "Danger: At the end of our ropes!";
-				}
 			}
 			catch (AggregateException ex)
 			{
@@ -83,7 +76,7 @@ namespace MyApp.Namespace
 			try
 			{
 				Console.WriteLine("Querymodel: PopulateSelectLists");
-				SelectListOfJobs = JobServices.ListJobs();
+				//TODO2: Put your code in this try
 				
 			}
 			catch (Exception ex)
@@ -97,7 +90,8 @@ namespace MyApp.Namespace
 			try
 			{
 				Console.WriteLine($"QueryCrudModel: GetSupplies");
-				SearchedSupplies = SupplyServices.FindSuppliesByJob(SelectedJobId);
+				//TODO3: Put your code in this try
+
 			}
 			catch (Exception ex)
 			{ 

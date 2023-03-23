@@ -26,13 +26,13 @@ namespace BLL
 
 		#region Queries
 
-		public List<SupplyList> FindSuppliesByJob(int? id)
+		public List<SupplyItem> FindSuppliesByJob(int id)
 		{
 			Console.WriteLine($"SupplyServices: FindSuppliesByJob(); id= {id}");
 			var info = 
 				Context.Supplies
 				.Where(x=>x.JobId == id)
-				.Select(x => new SupplyList
+				.Select(x => new SupplyItem
 				{
 					SupplyId = x.SupplyId,
 					JobId = x.JobId,
