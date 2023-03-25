@@ -50,22 +50,23 @@ namespace MyApp.Namespace
 		[BindProperty]
 		public int SelectedSubjectId {get;set;}
 
-		public void OnGet()
-		{
-				Console.WriteLine($"ContactModel: OnGet");
-				PopulateSelectLists();
-		}
-
-		private void PopulateSelectLists()
+		public IActionResult OnGet()
 		{
 			try
 			{
-				SelectListOfSubjects = new List<string>(){"select...", "Contributing", "Request Membership", "Bug Report"};  
+				Console.WriteLine($"ContactModel: OnGet");
+				PopulateSelectLists();
 			}
 			catch (Exception e)
 			{ 
 				ErrorMessage = GetInnerException(e);
 			}
+			return Page();
+		}
+
+		private void PopulateSelectLists()
+		{
+				SelectListOfSubjects = new List<string>(){"select...", "Contributing", "Request Membership", "Bug Report"};  
 		}
 
 		public IActionResult OnPost(string text1, string number1)
@@ -84,15 +85,24 @@ namespace MyApp.Namespace
 					Console.WriteLine($"checkbox= {CheckBox}");
 					Console.WriteLine($"radio= {Radio}");
 					// Client Side Validation
-					if (string.IsNullOrEmpty(Text1))
-						errors.Add(new Exception("Text1"));
+					if (string.IsNullOrEmpty(Text2))
+						errors.Add(new Exception("Text2"));
 					if (SelectedSubjectId == 0)
 						errors.Add(new Exception("DropDown"));
 					
 					if (errors.Count() > 0)
 						throw new AggregateException("Missing Data: ", errors);
 
+					if (Text2.Trim().Length < 3)
+						errors.Add(new Exception("Text2 < 3"));
+					if (Number2 < 1)
+						errors.Add(new Exception("Number2 < 1"));
+
+					if (errors.Count() > 0)
+						throw new AggregateException("Bad Data: ", errors);
+
 					SuccessMessage = $"T1={Text1}, T2={Text2}, T3={Text3}, N1={Number1}, N2={Number2}, N3={Number3}, Email={Email}, Date={MyDate}, Subject={SelectListOfSubjects[SelectedSubjectId]}, Text={MessageBody}, CheckBox={CheckBox}, Radio={Radio}";
+
 				} else if(ButtonPressed == "Clear")
 				{
 					Text1 = "";
