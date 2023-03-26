@@ -83,62 +83,32 @@
 				}
 			</div>
 		</div>
-		<div class="row g-3 mb-3">
-			<div class="col-4">
-				<textarea class="form-control" 
-				rows="2" cols="60" placeholder="enter your message" name="MessageBody">@Model.MessageBody
-				</textarea>
-			</div>
+		<div class="mb-3">
+			<textarea class="form-control" 
+			rows="2" cols="60" placeholder="enter your message" name="MessageBody">@Model.MessageBody
+			</textarea>
 		</div>
-		<div class="row g-3 mb-3">
-			<div class="col-4">
-				<div class="form-check">
-					<label class="form-check-label" for="CheckBox">CheckBox:</label>
-					<input type="checkbox" class="form-check-input" id="CheckBox" name="CheckBox" checked="@Model.CheckBox" />
-				</div>
-			</div>
-			<div class="col-4">
-				<span>Radio Button Group:</span>
-				<div class="form-check">
-					@if (Model.Radio == "email")
-					{
-						<input type="radio" class="form-check-input" id="radio1" name="Radio" value="email" checked>
-					}
-					else
-					{
-						<input type="radio" class="form-check-input" id="radio1" name="Radio" value="email">
-					}
-					<label for="radio1" class="form-check-label">Email</label>
-				</div>
-				<div class="form-check">
-					@if (Model.Radio == "phone")
-					{
-						<input type="radio" class="form-check-input" id="radio2" name="Radio" value="phone" checked>
-					}
-					else
-					{
-						<input type="radio" class="form-check-input" id="radio2" name="Radio" value="phone">
-					}
-					<label for="radio2" class="form-check-label">Phone</label>
-				</div>
-				<div class="form-check">
-					@if (Model.Radio == "mail")
-					{
-						<input type="radio" class="form-check-input" id="radio3" name="Radio" value="mail" checked>
-					}
-					else
-					{
-						<input type="radio" class="form-check-input" id="radio3" name="Radio" value="mail">
-					}
-					<label for="radio3" class="form-check-label">Mail</label>
-				</div>
-			</div>
+		<div class="mb-3">
+				<label class="form-check-label" for="CheckBox">CheckBox:</label>
+				<input type="checkbox" class="form-check-input" id="CheckBox" name="CheckBox" checked="@Model.CheckBox" />
 		</div>
-		<div class="row g-3 mb-3">
-			<div class="col-4">
-				<button type="submit" class="btn btn-dark" name="ButtonPressed" value="Submit">Submit</button>
-				<button type="submit" class="btn btn-dark" name="ButtonPressed" value="Clear">Clear</button>
-			</div>
+		<div class="mb-3">
+			Communication Type?
+			@foreach (var radioOption in Model.RadioOptions)
+			{
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="Radio" 
+						name="Radio" value="@radioOption" 
+						checked="@(radioOption == Model.Radio)">
+					<label class="form-check-label" for="Radio">
+						@radioOption
+					</label>
+				</div>
+			}
+		</div>
+		<div class="mb-3">
+			<button type="submit" class="btn btn-dark" name="ButtonPressed" value="Submit">Submit</button>
+			<button type="submit" class="btn btn-dark" name="ButtonPressed" value="Clear">Clear</button>
 		</div>
 	</form>
 	@if(!string.IsNullOrEmpty(Model.ErrorMessage))

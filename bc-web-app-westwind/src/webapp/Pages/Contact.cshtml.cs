@@ -41,8 +41,9 @@ namespace MyApp.Namespace
 		public string CheckBox{get;set;}
 		[BindProperty]
 		public string Radio{get;set;}
-		[BindProperty]
-		public string Range{get;set;}
+		public string[] RadioOptions = {"email","phone","snail mail"};
+		// [BindProperty]
+		// public string Range{get;set;}
 		[BindProperty]
 		public string ButtonPressed {get; set;}
 
@@ -56,6 +57,10 @@ namespace MyApp.Namespace
 			{
 				Console.WriteLine($"ContactModel: OnGet");
 				PopulateSelectLists();
+				SelectedSubjectId = 2;
+				Text2 = "Robbin Law";
+				Number2 = 12;
+				Radio = "email";
 			}
 			catch (Exception e)
 			{ 
@@ -82,11 +87,11 @@ namespace MyApp.Namespace
 				
 				if(ButtonPressed == "Submit")
 				{
-					Console.WriteLine($"checkbox= {CheckBox}");
-					Console.WriteLine($"radio= {Radio}");
 					// Client Side Validation
 					if (string.IsNullOrEmpty(Text2))
 						errors.Add(new Exception("Text2"));
+					if (string.IsNullOrEmpty(Radio))
+						errors.Add(new Exception("Radio"));
 					if (SelectedSubjectId == 0)
 						errors.Add(new Exception("DropDown"));
 					
@@ -95,8 +100,8 @@ namespace MyApp.Namespace
 
 					if (Text2.Trim().Length < 3)
 						errors.Add(new Exception("Text2 < 3"));
-					if (Number2 < 1)
-						errors.Add(new Exception("Number2 < 1"));
+					if (Number2 < 11)
+						errors.Add(new Exception("Number2 < 11"));
 
 					if (errors.Count() > 0)
 						throw new AggregateException("Bad Data: ", errors);
