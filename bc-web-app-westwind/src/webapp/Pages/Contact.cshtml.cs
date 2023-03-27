@@ -42,8 +42,7 @@ namespace MyApp.Namespace
 		[BindProperty]
 		public string Radio{get;set;}
 		public string[] RadioOptions = {"email","phone","snail mail"};
-		// [BindProperty]
-		// public string Range{get;set;}
+	
 		[BindProperty]
 		public string ButtonPressed {get; set;}
 
@@ -128,11 +127,11 @@ namespace MyApp.Namespace
 			}
 			catch (AggregateException e)
 			{
-				ErrorMessage = e.Message;
+				ErrorMessage = "Thrown in catch (AggregateException) " + e.Message;
 			}
 			catch (Exception e)
 			{
-				ErrorMessage = GetInnerException(e);
+				ErrorMessage = "Thrown in catch (Exception) " + GetInnerException(e);
 			}
 			return Page();
 		}

@@ -16,8 +16,8 @@
 |InClass-1-Quiz OOP, Composition|Moodle|Week 6 - Monday Feb 13|5|
 |Exercise-2 OOP, File I/O, Console App|GitHub|Week 7|5|
 |Exercise-3 FrontEnd|GitHub|Week 10|5|
-|InClass-2-Code FrontEnd|GitHub|Week 11|10|
-|InClass-2-Quiz FrontEnd|Moodle|Week 11|5|
+|InClass-2-Code FrontEnd|GitHub|Week 11 - Thursday March 30|10|
+|InClass-2-Quiz FrontEnd|Moodle|Week 11 - Thursday March 30|5|
 |Exercise-4 Query & Crud|GitHub|Week 13|5|
 |InClass-3-Code Query|GitHub|Week 14|10|
 |InClass-3-Quiz Query|Moodle|Week 14|5|
