@@ -52,6 +52,20 @@ namespace MyApp.Namespace
 			return Page();
 		}
 
+		private void PopulateSelectLists()
+		{
+			try
+			{
+				Console.WriteLine("QueryCrudModel: PopulateSelectLists");
+				SelectListOfJobs = JobServices.ListJobs();
+				
+			}
+			catch (Exception ex)
+			{ 
+				ErrorMessage = GetInnerException(ex);
+			}
+		}
+		
 		public IActionResult OnPost()
 		{
 			try
@@ -107,20 +121,6 @@ namespace MyApp.Namespace
 			GetSupplies();
 			return Page();
 			
-		}
-
-		private void PopulateSelectLists()
-		{
-			try
-			{
-				Console.WriteLine("QueryCrudModel: PopulateSelectLists");
-				SelectListOfJobs = JobServices.ListJobs();
-				
-			}
-			catch (Exception ex)
-			{ 
-				ErrorMessage = GetInnerException(ex);
-			}
 		}
 
 		private void GetSupplies()
