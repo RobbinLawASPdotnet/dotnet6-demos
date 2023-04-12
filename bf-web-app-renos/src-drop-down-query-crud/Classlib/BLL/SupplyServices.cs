@@ -47,7 +47,7 @@ namespace BLL
 		#endregion
 
 		#region READ - Retrieve, Edit, Add, Delete
-
+		// CRUD - Create, Read/Write, Update, Delete
 		public SupplyItem Retrieve(int id)
 		{
 			var info = 
