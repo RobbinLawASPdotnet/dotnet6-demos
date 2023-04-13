@@ -159,10 +159,10 @@ namespace MyApp.Namespace
 				Errors.Add(new Exception("Quantity"));
 
 			if (Errors.Count() > 0)
-					throw new AggregateException("Invalid Data: ", Errors);
+					throw new AggregateException("Missing Data: ", Errors);
 
 			if(Supply.Material.Length > 100)
-				Errors.Add(new Exception("Material > 40"));
+				Errors.Add(new Exception("Material > 100"));
 			
 			if (Errors.Count() > 0)
 					throw new AggregateException("Invalid Data: ", Errors);
