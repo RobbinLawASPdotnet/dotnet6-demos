@@ -19,11 +19,11 @@
 |InClass-2-Code FrontEnd|GitHub|Week 11 - Thursday March 30|10|
 |InClass-2-Quiz FrontEnd|Moodle|Week 11 - Thursday March 30|5|
 |Exercise-4 Query|GitHub|Week 13|5|
-|InClass-3-Code Query|GitHub|Week 14|10|
-|InClass-3-Quiz Query|Moodle|Week 14|5|
-|Project-Deliverable-1 Setup|GitHub|Week 15|5|
-|Project-Deliverable-2 Query|GitHub|Week 15|15|
-|Project-Deliverable-3 Crud|GitHub|Week 15|15|
+|InClass-3-Code Query|GitHub|Week 14 - Monday April 24|10|
+|InClass-3-Quiz Query|Moodle|Week 14 - Monday April 24|5|
+|Project-Deliverable-1 Setup|GitHub|Week 15 - Thursday April 27|5|
+|Project-Deliverable-2 Query|GitHub|Week 15 - Thursday April 27|15|
+|Project-Deliverable-3 Crud|GitHub|Week 15 - Thursday April 27|15|
 
 ---
 
@@ -45,5 +45,5 @@
 |11-Mar27|Query|Query|Query|InClass2|
 |12-Apr3|Crud|Crud|Crud||
 |13-Apr10|EASTER|Crud|Crud|Ex4|
-|14-Apr17|Project|Project|Project|InClass3|
-|15-Apr24|Project|Project|Project|Project|
+|14-Apr17|Project|Project|Project||
+|15-Apr24|Project|Project|Project|InClass3 Project|
