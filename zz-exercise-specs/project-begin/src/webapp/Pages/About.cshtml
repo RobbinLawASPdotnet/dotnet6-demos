@@ -1,0 +1,26 @@
+﻿@page
+@model MyApp.Namespace.AboutModel
+@{
+	ViewData["Title"] = "About";
+}
+
+<h5>About The Database Used for This Site</h5>
+
+@if(!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+	<p style="color:red; font-weight: bold;">@Model.ErrorMessage</p>
+}
+
+@if(!string.IsNullOrEmpty(Model.SuccessMessage))
+{
+	<p style="color:green; font-weight: bold;">@Model.SuccessMessage</p>
+}
+
+<table class="table table-hover">
+	<tr>
+		<th>Database's Version</th>
+	</tr>
+	<tr>
+		<td>@Model.DatabaseVersion.ToString()</td>
+	</tr>
+</table>
